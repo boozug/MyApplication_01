@@ -32,8 +32,8 @@ public class LoginActivity extends AppCompatActivity {
                         if(dbUser.Login(username,password))
                         {
                             Toast.makeText(LoginActivity.this,"Logged In Successfully", Toast.LENGTH_LONG).show();
-//                            Intent intent = new Intent(LoginActivity.this, Devices_list.class);
-//                            startActivity(intent);
+                            Intent intent = new Intent(LoginActivity.this, DevicelistActivity.class);
+                            startActivity(intent);
                         }
                         else {
                             Toast.makeText(LoginActivity.this,"Invalid Username/Password", Toast.LENGTH_LONG).show();
