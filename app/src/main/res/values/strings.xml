@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">My Application 01</string>
+
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="todo">TODO</string>
@@ -21,4 +22,6 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="plc_list">PLC list</string>
+
 </resources>
