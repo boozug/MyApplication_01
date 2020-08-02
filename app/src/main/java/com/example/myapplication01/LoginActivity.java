@@ -20,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
         RelativeLayout btnLogin = (RelativeLayout) findViewById(R.id.relative_layout_btn);
         final EditText txtUserName = (EditText) findViewById(R.id.Txtname);
         final EditText txtPassword = (EditText) findViewById(R.id.Txtpassword);
+        //region signin activity
         btnLogin.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {

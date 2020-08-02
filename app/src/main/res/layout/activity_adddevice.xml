@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<androidx.constraintlayout.widget.ConstraintLayout -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Adddevice">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/darkColor"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/addButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="add device"
+                app:srcCompat="@android:drawable/ic_menu_add"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageButton
+                android:id="@+id/cancelButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentRight="true"
+                android:contentDescription="back to previous"
+                app:srcCompat="@drawable/abc_vector_test"
+                tools:ignore="PrivateResource,VectorDrawableCompat" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/TxtUnittype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="@string/unit_type"
+        android:inputType="numberSigned"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/TxtIOnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TxtUnittype"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/io_number"
+        android:inputType="numberSigned"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/TxtCPUType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TxtIOnumber"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:autofillHints="Port_number"
+        android:ems="10"
+        android:hint="@string/cpu_type"
+        android:inputType="numberSigned" />
+
+    <EditText
+        android:id="@+id/TxtProtocolype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TxtCPUType"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:autofillHints="Port_number"
+        android:ems="10"
+        android:hint="@string/protocol_type"
+        android:inputType="numberSigned" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/co"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TxtProtocolype"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="#FFFFFF">
+
+        <LinearLayout
+            android:id="@+id/card_view_ipaddress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cardview_light_background"
+            android:orientation="horizontal"
+            android:theme="@style/AppTheme">
+
+            <EditText
+                android:id="@+id/Txtipfield1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:layout_marginLeft="@dimen/layout_margin_top"
+                android:ems="10"
+                android:gravity="start"
+                android:hint="@string/iprange2"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:text="@string/iprange1"
+                app:layout_constraintTop_toBottomOf="parent"
+                tools:layout_editor_absoluteX="100dp" />
+
+            <EditText
+                android:id="@+id/Txtipfield2"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/layout_margin_top"
+                android:layout_marginLeft="@dimen/layout_margin_top"
+                android:ems="10"
+                android:gravity="start"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:text="@string/iprange2"
+                app:layout_constraintTop_toBottomOf="parent"
+                tools:layout_editor_absoluteX="100dp" />
+
+            <EditText
+                android:id="@+id/Txtipfield3"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/layout_margin_top"
+                android:layout_marginLeft="@dimen/layout_margin_top"
+                android:ems="10"
+                android:hint="@string/name"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:text="@string/iprange3"
+                app:layout_constraintTop_toBottomOf="parent"
+                tools:layout_editor_absoluteX="100dp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <EditText
+        android:id="@+id/TxtPortnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/co"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:autofillHints="Port_number"
+        android:ems="10"
+        android:hint="@string/port_number"
+        android:inputType="numberSigned" />
+
+    <EditText
+        android:id="@+id/TxtDesPortnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TxtPortnumber"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:autofillHints="Port_number"
+        android:ems="10"
+        android:hint="@string/des_port_number"
+        android:inputType="numberSigned" />
+
+</RelativeLayout>
+
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

@@ -19,10 +19,15 @@ public class DBUserAdapter
     private static final String DATABASE_TABLE = "users";
     private static final int DATABASE_VERSION = 1;
 
-    private static final String DATABASE_CREATE =
+    private static final String DATABASE_CREATE_USERS =
             "create table users (_id integer primary key autoincrement, "
                     + "username text not null unique, "
                     + "password text not null);";
+
+//    private static final String DATABASE_CREATE_IP_LIST =
+//            "create table users (_id integer primary key autoincrement, "
+//                    + "ip text not null unique, "
+//                    + "password text not null);";
 
     private Context context = null;
     private DatabaseHelper DBHelper;
@@ -45,9 +50,9 @@ public class DBUserAdapter
         @Override
         public void onCreate(SQLiteDatabase db)
         {
-            db.execSQL(DATABASE_CREATE);
+            db.execSQL(DATABASE_CREATE_USERS);
+//            db.execSQL(DATABASE_CREATE_IP_LIST);
         }
-
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
         {
