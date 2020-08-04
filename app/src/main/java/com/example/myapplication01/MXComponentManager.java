@@ -2,31 +2,30 @@ package com.example.myapplication01;
 
 import java.util.Random;
 
+import io.reactivex.rxjava3.core.Observable;
 import jp.co.melco.mxcomponent.MELMxCommunication;
 import jp.co.melco.mxcomponent.MELMxLabel;
 import jp.co.melco.mxcomponent.MELMxOpenSettings;
 import android.os.AsyncTask;
+import android.os.Looper;
 import android.os.Process;
 
 import androidx.loader.content.AsyncTaskLoader;
 
 public class MXComponentManager {
 
-    private MELMxCommunication mxcom;
+    private MELMxCommunication mxcomm;
     private MELMxOpenSettings mxopen;
-    private String password = "";
-    public Boolean commandexecute=false;
 
     /**
      *
-     * Name        : Open Setting Initalize
+     * Name        : Open
      * Description : Initialize MELMxOpenSetting Class Members
      *
      */
-    private void setOpenSetting(String txtHostaddress, int IntPort, int Intunittype, int Intcputype, String txtPassword, int IntStartIOnumber){
 
-        //[NOTE:Change below Value for User's Environment]
-
+    private int execOpen(String txtHostaddress, int IntPort, int Intunittype, int Intcputype, String txtPassword, int IntStartIOnumber){
+//        Thread thread = new Thread()
         //[Set MELSEC HostAddress (Hostname or IPv4String)]
         mxopen.hostAddress=txtHostaddress;
         //[Set MELSEC Port]
@@ -36,27 +35,42 @@ public class MXComponentManager {
         //[Set MELSEC CPUTypeNumber (see User's Manual)]
         mxopen.cpuType=Intcputype;  //[ex. Q20UDEHCPU]
         //[Set MELSEC RemotePassword (if needed)]
-        password=txtPassword;
         //[Set MELSEC I/ONumber (see User's Manual)]
         mxopen.ioNumber=IntStartIOnumber;
+        return mxcomm.open(mxopen, txtPassword);
     }
 
     /**
      *
-     * Name        : Open MELSEC CONNECTION
-     * Description : Execute MX Component "Open" Function
-     * @param seqno: Execute sequence number (result callback with this number)
+     * Name        : Close
+     * Description : Initialize MELMxOpenSetting Class Members
      *
      */
-    public void execOpen(int seqno){
-//        //check command execute state
-//        if(commandexecute) return;
-//
-//        //set command execute state
-//        commandexecute = true;
-//        final int seq=seqno;
-        //Move the thread into background
-        android.os.Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
+    private int execClose(){
+        return mxcomm.close();
     }
 
+    /**
+     *
+     * Name        : Read Device Block to MELSEC
+     * Description : Execute MX Component "Write Device Block" Function
+     *
+     */
+    private Integer readDeviceBlock(String deviceaddress) {
+        //[call "Read Device Block" API]
+        int readdata[]=new int[1];
+        int result = mxcomm.readDeviceBlock(deviceaddress,1,readdata);
+        //[if API Success Set DetailResultString Readed data("fault" set blank)]
+        return result;
+    }
+
+    /**
+     *
+     * Name        : Write Device Block to MELSEC
+     * Description : Execute MX Component "Write Device Block" Function
+     *
+     */
 }
+
+
+
