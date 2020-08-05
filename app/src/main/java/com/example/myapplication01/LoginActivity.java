@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -52,5 +53,27 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        //      region Change to expandable view
+        Button chuyentrang = findViewById(R.id.btn_checkexapadbleview);
+        chuyentrang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent((LoginActivity.this),TryActivityMainActivity.class);
+                startActivity(intent);
+            }
+        });
+//      endregion
+
+
+        //      region Change to recycle view
+        Button chuyentrang2 = findViewById(R.id.btn_checkrecyclerview);
+        chuyentrang2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent((LoginActivity.this),try_Country_activity_main.class);
+                startActivity(intent);
+            }
+        });
+//      endregion
     }
 }

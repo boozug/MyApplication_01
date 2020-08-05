@@ -19,15 +19,22 @@ public class DBUserAdapter
     private static final String DATABASE_TABLE = "users";
     private static final int DATABASE_VERSION = 1;
 
+//    private static final String INSERT_TABLE = ""
+
     private static final String DATABASE_CREATE_USERS =
             "create table users (_id integer primary key autoincrement, "
                     + "username text not null unique, "
                     + "password text not null);";
 
-//    private static final String DATABASE_CREATE_IP_LIST =
-//            "create table users (_id integer primary key autoincrement, "
-//                    + "ip text not null unique, "
-//                    + "password text not null);";
+    private static final String DATABASE_CREATE_DEVICE_LIST =
+            "create table device_table (_id integer primary key autoincrement, "
+                    + "ipaddress text not null unique, "
+                    + "unittype text not null,"
+                    + "ionumber text not null,"
+                    + "cputype text not null,"
+                    + "protocol_type text not null,"
+                    +"port_number text not null," +
+                    "destination_port_number not null)";
 
     private Context context = null;
     private DatabaseHelper DBHelper;
@@ -51,7 +58,7 @@ public class DBUserAdapter
         public void onCreate(SQLiteDatabase db)
         {
             db.execSQL(DATABASE_CREATE_USERS);
-//            db.execSQL(DATABASE_CREATE_IP_LIST);
+            db.execSQL(DATABASE_CREATE_DEVICE_LIST);
         }
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
@@ -85,6 +92,12 @@ public class DBUserAdapter
 
     }
 
+    public void AddDevice(String [] Device_array){
+
+        for (String s : Device_array ){
+            db.execSQL("INSERT INTO device_table VALUES"+s);
+        }
+    }
     public boolean Login(String username, String password) throws SQLException
     {
         Cursor mCursor = db.rawQuery("SELECT * FROM " + DATABASE_TABLE + " WHERE username=? AND password=?", new String[]{username,password});

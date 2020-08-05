@@ -100,8 +100,17 @@
         android:layout_below="@+id/cardview_items"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:text="Already a MEVN's family? Click here to login"
+        android:text="@string/already_a_mevn_s_family_click_here_to_login"
         android:textColor="@android:color/background_light"
         android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:text="@string/button" />
 
 </RelativeLayout>

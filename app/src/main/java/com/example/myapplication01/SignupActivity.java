@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -61,7 +62,7 @@ public class SignupActivity extends AppCompatActivity {
         //endregion
 
         //region change to login page
-        TextView login = (TextView) findViewById(R.id.textView_login);
+        TextView login = findViewById(R.id.textView_login);
         login.setMovementMethod(LinkMovementMethod.getInstance());
         login.setOnClickListener(new View.OnClickListener() {
 
@@ -73,5 +74,7 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
         // endregion
+
+
     }
 }

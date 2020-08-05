@@ -27,21 +27,22 @@ public class DevicelistActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_devicelist);
-        String[][] myDataset = new String[1][3];
+//        String[][] myDataset = new String[1][3];
+//        DBUserAdapter dbUser = new DBUserAdapter(DevicelistActivity.this);
 //        Toolbar toolbar = findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        mAdapter = new MyAdapter(myDataset);
+//        mAdapter = new MyAdapter(myDataset);
         recyclerView.setAdapter(mAdapter);
 //        Fab create new device
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DevicelistActivity.this, Adddevice.class);
-                startActivity(intent);
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                 =//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
+                Intent intent= new Intent(DevicelistActivity.this, Adddevice.class);
+                startActivity(intent);
             }
         });
     }

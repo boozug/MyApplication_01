@@ -25,7 +25,7 @@
                 android:id="@+id/addButton"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:contentDescription="add device"
+                android:contentDescription="@string/add_device"
                 app:srcCompat="@android:drawable/ic_menu_add"
                 tools:ignore="VectorDrawableCompat" />
 
@@ -35,9 +35,11 @@
                 android:layout_height="50dp"
                 android:layout_alignParentLeft="false"
                 android:layout_alignParentRight="true"
-                android:contentDescription="back to previous"
+                android:contentDescription="@string/back_to_previous"
                 app:srcCompat="@drawable/abc_vector_test"
-                tools:ignore="PrivateResource,VectorDrawableCompat" />
+                tools:ignore="PrivateResource,VectorDrawableCompat"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentEnd="true" />
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
@@ -51,7 +53,7 @@
         android:ems="10"
         android:hint="@string/unit_type"
         android:inputType="numberSigned"
-        android:autofillHints="" />
+        android:autofillHints="@string/unit_type" />
 
     <EditText
         android:id="@+id/TxtIOnumber"
@@ -178,6 +180,15 @@
         android:ems="10"
         android:hint="@string/des_port_number"
         android:inputType="numberSigned" />
+
+    <TextView
+        android:id="@+id/demoview"
+        android:layout_width="95dp"
+        android:layout_height="42dp"
+        android:layout_below="@id/TxtDesPortnumber"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/textview" />
 
 </RelativeLayout>
 
