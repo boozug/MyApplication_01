@@ -14,6 +14,7 @@ import java.util.List;
 
 public class TryActivityMainActivity extends AppCompatActivity {
 
+    static List<String> device_list = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ExpandableListView expandableListView;
@@ -51,6 +52,8 @@ public class TryActivityMainActivity extends AppCompatActivity {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
+                try {
+                Add_device(groupPosition, childPosition);
                 Toast.makeText(
                         getApplicationContext(),
                         expandableListTitle.get(groupPosition)
@@ -59,7 +62,43 @@ public class TryActivityMainActivity extends AppCompatActivity {
                                 expandableListTitle.get(groupPosition)).get(
                                 childPosition), Toast.LENGTH_SHORT
                 ).show();
+                return true;}
+                catch (Exception e)
+                {
+                    Toast.makeText(TryActivityMainActivity.this,e.getMessage(), Toast.LENGTH_LONG).show();
+                }
                 return false;
+            }
+
+            private void Add_device(int groupPosition, int childPosition_tmp) {
+                switch (groupPosition) {
+                    case 0:
+                        device_list.add(expandableListDetail.get(
+                                expandableListTitle.get(groupPosition)).get(
+                                childPosition_tmp));
+                        break;
+                    case 1:
+                        if (device_list != null) {
+                            device_list.add(2, expandableListDetail.get(
+                                    expandableListTitle.get(groupPosition)).get(
+                                    childPosition_tmp));
+                        } else {
+                            device_list.add(expandableListDetail.get(
+                                    expandableListTitle.get(groupPosition)).get(
+                                    childPosition_tmp));
+                        }
+                        break;
+                    case 2:
+                        if (device_list != null) {
+                            device_list.add(3, expandableListDetail.get(
+                                    expandableListTitle.get(groupPosition)).get(
+                                    childPosition_tmp));
+                        } else {
+                            device_list.add(expandableListDetail.get(
+                                    expandableListTitle.get(groupPosition)).get(
+                                    childPosition_tmp));
+                        }
+                }
             }
         });
     }

@@ -43,59 +43,11 @@
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
-    <EditText
-        android:id="@+id/TxtUnittype"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:ems="10"
-        android:hint="@string/unit_type"
-        android:inputType="numberSigned"
-        android:autofillHints="@string/unit_type" />
-
-    <EditText
-        android:id="@+id/TxtIOnumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/TxtUnittype"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="@string/io_number"
-        android:inputType="numberSigned"
-        android:autofillHints="" />
-
-    <EditText
-        android:id="@+id/TxtCPUType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/TxtIOnumber"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:autofillHints="Port_number"
-        android:ems="10"
-        android:hint="@string/cpu_type"
-        android:inputType="numberSigned" />
-
-    <EditText
-        android:id="@+id/TxtProtocolype"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/TxtCPUType"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:autofillHints="Port_number"
-        android:ems="10"
-        android:hint="@string/protocol_type"
-        android:inputType="numberSigned" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/co"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/TxtProtocolype"
+        android:layout_below="@id/toolbar2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         app:cardBackgroundColor="#FFFFFF">
@@ -104,6 +56,7 @@
             android:id="@+id/card_view_ipaddress"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
             android:background="@color/cardview_light_background"
             android:orientation="horizontal"
             android:theme="@style/AppTheme">
@@ -181,14 +134,29 @@
         android:hint="@string/des_port_number"
         android:inputType="numberSigned" />
 
-    <TextView
-        android:id="@+id/demoview"
-        android:layout_width="95dp"
-        android:layout_height="42dp"
+    <EditText
+        android:id="@+id/Txttimeout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/TxtDesPortnumber"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="@string/textview" />
+        android:autofillHints="Port_number"
+        android:ems="10"
+        android:hint="@string/des_port_number"
+        android:inputType="numberSigned" />
+
+    <EditText
+        android:id="@+id/Txtcpu_timeout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Txttimeout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:autofillHints="Port_number"
+        android:ems="10"
+        android:hint="@string/des_port_number"
+        android:inputType="numberSigned" />
 
 </RelativeLayout>
 

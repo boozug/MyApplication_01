@@ -25,17 +25,12 @@ public class Adddevice extends AppCompatActivity {
         TextView txthostadd1 = findViewById(R.id.Txtipfield1);
         TextView txthostadd2 = findViewById(R.id.Txtipfield2);
         TextView txthostadd3 = findViewById(R.id.Txtipfield3);
-        TextView txtUnittype = findViewById(R.id.TxtUnittype);
-        TextView txtionumber = findViewById(R.id.TxtIOnumber);
-        TextView txtcputype = findViewById(R.id.TxtCPUType);
-        TextView txtprotocoltype = findViewById(R.id.TxtProtocolype);
         TextView txtportnumber = findViewById(R.id.TxtPortnumber);
         TextView txtdesportnumber = findViewById(R.id.TxtDesPortnumber);
         ImageButton addbtn = findViewById(R.id.addButton);
         ImageButton backbtn = findViewById(R.id.cancelButton);
         String host_address = txthostadd1+"."+txthostadd2+"."+txthostadd3;
-        String[] device_array = {host_address,txtUnittype.toString(),txtionumber.toString(),
-                txtcputype.toString(),txtprotocoltype.toString(),txtportnumber.toString(),txtdesportnumber.toString()};
+        String[] device_array = {host_address,txtportnumber.toString(),txtdesportnumber.toString()};
         //        endregion
         addbtn.setOnClickListener(new View.OnClickListener(){
 
