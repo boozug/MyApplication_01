@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.List;
+
 public class DBUserAdapter
 {
     public static final String KEY_ROWID = "_id";
@@ -28,11 +30,10 @@ public class DBUserAdapter
 
     private static final String DATABASE_CREATE_DEVICE_LIST =
             "create table device_table (_id integer primary key autoincrement, "
-                    + "ipaddress text not null unique, "
-                    + "unittype text not null,"
                     + "ionumber text not null,"
                     + "cputype text not null,"
-                    + "protocol_type text not null,"
+                    + "unittype text not null,"
+                    + "ipaddress text not null unique, "
                     +"port_number text not null," +
                     "destination_port_number not null)";
 
@@ -92,10 +93,19 @@ public class DBUserAdapter
 
     }
 
-    public void AddDevice(String [] Device_array){
+    public void AddDevice(List<String> Device_array) {
 
-        for (String s : Device_array ){
-            db.execSQL("INSERT INTO device_table VALUES"+s);
+//        ContentValues initiaValues = new ContentValues();
+        String exec_str = "INSERT INTO device_table VALUES(";
+        for (String s : Device_array) {
+//            db.execSQL("INSERT INTO device_table VALUES "+s);
+            if ((Device_array.indexOf(s)) <= Device_array.size() - 2) {
+                exec_str = exec_str + s + ",";
+            }
+            else {
+                exec_str = exec_str + s + ");";
+                db.execSQL(exec_str);
+            }
         }
     }
     public boolean Login(String username, String password) throws SQLException

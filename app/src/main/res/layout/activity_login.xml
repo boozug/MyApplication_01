@@ -25,6 +25,24 @@
         android:gravity="center_horizontal"
         android:text="@string/recyclerview" />
 
+    <Button
+        android:id="@+id/btn_checkconnection"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
+        android:layout_below="@id/btn_checkrecyclerview"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="-642dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginRight="140dp"
+        android:gravity="center_horizontal"
+        android:text="@string/check_connect" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="120dp"

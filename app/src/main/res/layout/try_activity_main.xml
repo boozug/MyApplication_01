@@ -14,7 +14,7 @@
             android:layout_height="wrap_content">
 
         <ImageButton
-            android:id="@+id/cancelButton"
+            android:id="@+id/next_Button"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="false"

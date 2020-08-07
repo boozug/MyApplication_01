@@ -31,6 +31,7 @@
     <string name="iprange1">field 1</string>
     <string name="iprange2">field 2</string>
     <string name="iprange3">field 3</string>
+    <string name="iprange4">field 4</string>
     <string name="port_number"> port number</string>
     <string name="des_port_number">Destination port number</string>
     <string name="add_device">add device</string>
@@ -40,6 +41,10 @@
     <string name="expandableview">expandableview</string>
     <string name="already_a_mevn_s_family_click_here_to_login">Already a MEVN\'s family? Click here to login</string>
     <string name="recyclerview">RecyclerView</string>
+    <string name="check_connect">check connect</string>
+    <string name="ip_address">IP Address</string>
+    <string name="time_out">Time out</string>
+    <string name="destination_timeout">Destination timeout</string>
     <string-array name="group1">
         <item>item1</item>
         <item>item2</item>

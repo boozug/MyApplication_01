@@ -30,7 +30,7 @@
                 tools:ignore="VectorDrawableCompat" />
 
             <ImageButton
-                android:id="@+id/cancelButton"
+                android:id="@+id/next_Button"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_alignParentLeft="false"
@@ -45,13 +45,18 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/co"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         app:cardBackgroundColor="#FFFFFF">
-
+        <TextView
+            android:id="@+id/text_ip"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ip_address"/>
         <LinearLayout
             android:id="@+id/card_view_ipaddress"
             android:layout_width="match_parent"
@@ -66,16 +71,15 @@
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:layout_marginStart="@dimen/layout_margin_start"
                 android:layout_marginLeft="@dimen/layout_margin_top"
                 android:ems="10"
                 android:gravity="start"
-                android:hint="@string/iprange2"
+                android:hint="@string/iprange1"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
-                android:text="@string/iprange1"
+                android:text=""
                 app:layout_constraintTop_toBottomOf="parent"
-                tools:layout_editor_absoluteX="100dp" />
+                android:layout_marginStart="@dimen/layout_margin_top" />
 
             <EditText
                 android:id="@+id/Txtipfield2"
@@ -84,11 +88,12 @@
                 android:layout_gravity="start"
                 android:layout_marginStart="@dimen/layout_margin_top"
                 android:layout_marginLeft="@dimen/layout_margin_top"
+                android:hint="@string/iprange2"
                 android:ems="10"
                 android:gravity="start"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
-                android:text="@string/iprange2"
+                android:text=""
                 app:layout_constraintTop_toBottomOf="parent"
                 tools:layout_editor_absoluteX="100dp" />
 
@@ -100,10 +105,25 @@
                 android:layout_marginStart="@dimen/layout_margin_top"
                 android:layout_marginLeft="@dimen/layout_margin_top"
                 android:ems="10"
-                android:hint="@string/name"
+                android:hint="@string/iprange3"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
-                android:text="@string/iprange3"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="parent"
+                tools:layout_editor_absoluteX="100dp" />
+
+            <EditText
+                android:id="@+id/Txtipfield4"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/layout_margin_top"
+                android:layout_marginLeft="@dimen/layout_margin_top"
+                android:ems="10"
+                android:hint="@string/iprange4"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:text=""
                 app:layout_constraintTop_toBottomOf="parent"
                 tools:layout_editor_absoluteX="100dp" />
 
@@ -143,7 +163,7 @@
         android:layout_marginTop="20dp"
         android:autofillHints="Port_number"
         android:ems="10"
-        android:hint="@string/des_port_number"
+        android:hint="@string/time_out"
         android:inputType="numberSigned" />
 
     <EditText
@@ -155,7 +175,7 @@
         android:layout_marginTop="20dp"
         android:autofillHints="Port_number"
         android:ems="10"
-        android:hint="@string/des_port_number"
+        android:hint="@string/destination_timeout"
         android:inputType="numberSigned" />
 
 </RelativeLayout>

@@ -75,5 +75,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 //      endregion
+
+//        region Change to check connect
+        Button chuyentrang3 = findViewById(R.id.btn_checkconnection);
+        chuyentrang3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent((LoginActivity.this),Try_MX_connection.class);
+                startActivity(intent);
+            }
+        });
     }
 }
