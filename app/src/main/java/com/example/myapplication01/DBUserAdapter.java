@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DBUserAdapter
@@ -34,12 +35,14 @@ public class DBUserAdapter
                     + "cputype text not null,"
                     + "unittype text not null,"
                     + "ipaddress text not null unique, "
-                    +"port_number text not null," +
-                    "destination_port_number not null)";
-
+                    +"port_number text not null,"
+                    +"destinnation_portnumber text not null,"
+                    +"time_out text not null,"
+                    +"destination_timeout not null);";
+    private static SQLiteDatabase db;
+    private static SQLiteOpenHelper DBHelper;
     private Context context = null;
-    private DatabaseHelper DBHelper;
-    private SQLiteDatabase db;
+
 
     public DBUserAdapter(Context ctx)
     {
@@ -73,13 +76,13 @@ public class DBUserAdapter
     }
 
 
-    public void open() throws SQLException
+    public static void open() throws SQLException
     {
         db = DBHelper.getWritableDatabase();
     }
 
 
-    public void close()
+    public static void close()
     {
         DBHelper.close();
     }
@@ -94,20 +97,42 @@ public class DBUserAdapter
     }
 
     public void AddDevice(List<String> Device_array) {
-
 //        ContentValues initiaValues = new ContentValues();
-        String exec_str = "INSERT INTO device_table VALUES(";
-        for (String s : Device_array) {
+        String exec_str = "INSERT INTO device_table VALUES('1',";
+        for (int i = 0; i < Device_array.size(); i++) {
 //            db.execSQL("INSERT INTO device_table VALUES "+s);
-            if ((Device_array.indexOf(s)) <= Device_array.size() - 2) {
-                exec_str = exec_str + s + ",";
-            }
-            else {
-                exec_str = exec_str + s + ");";
+            if (i < Device_array.size() - 1) {
+                exec_str = exec_str + "'" + Device_array.get(i) + "',";
+            } else {
+                exec_str = exec_str + "'" + Device_array.get(i) + "');";
                 db.execSQL(exec_str);
             }
         }
     }
+
+        public static ArrayList<try_Device> get_all_devices(){
+        ArrayList<try_Device> arrayList = new ArrayList<>();
+
+        // select all query
+         String select_query = "SELECT *FROM device_table";
+         SQLiteDatabase db = DBHelper.getWritableDatabase();
+         Cursor cursor = db.rawQuery(select_query,null);
+         //looping through all rows and adding to list
+         if(cursor.moveToFirst()){
+             do {
+                 try_Device Devices = new try_Device();
+                 Devices.setId(cursor.getString(0));
+                 Devices.setIo_number(cursor.getString(1));
+                 Devices.setCpu_type(cursor.getString(2));
+                 Devices.setIp_address(cursor.getString(4));
+                 arrayList.add(Devices);
+             }while (cursor.moveToNext());
+         }
+         DBHelper.close();
+         return arrayList;
+     }
+
+
     public boolean Login(String username, String password) throws SQLException
     {
         Cursor mCursor = db.rawQuery("SELECT * FROM " + DATABASE_TABLE + " WHERE username=? AND password=?", new String[]{username,password});

@@ -3,16 +3,31 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <TextView
-        android:id="@+id/title_textView"
+        android:id="@+id/id_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:textColor="@color/colorAccent"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@color/darkColor"/>
 
     <TextView
-        android:id="@+id/subtitle_textView"
+    android:id="@+id/cputype_textView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/id_textView" />
+
+    <TextView
+        android:id="@+id/ionumber_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title_textView" />
+        android:layout_below="@id/cputype_textView" />
+
+    <TextView
+        android:id="@+id/ipaddress_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ionumber_textView" />
+
 </RelativeLayout>

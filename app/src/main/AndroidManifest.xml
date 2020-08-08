@@ -15,7 +15,6 @@
         <activity android:name=".try_Country_activity_main" />
         <activity android:name=".TryListGroupActivity" />
         <activity android:name=".TryActivityMainActivity" />
-        <activity android:name=".Addevice.DevicemanagementActivity" />
         <activity android:name=".Adddevice" />
         <activity
             android:name=".DevicelistActivity"
