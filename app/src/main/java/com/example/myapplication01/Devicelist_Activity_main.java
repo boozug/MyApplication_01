@@ -28,15 +28,35 @@ public class Devicelist_Activity_main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_try__country_main);
+        actionButton = findViewById(R.id.fab);
+//        region-------------------------------------recyclerview setting---------------------------
         addeviceUDTactivityArrayList = Addevice_DBUserAdapter.get_all_devices();
         deviceAdapter = new Devicelist_deviceAdapter(addeviceUDTactivityArrayList);
-        actionButton = (FloatingActionButton)findViewById(R.id.fab);
         recyclerView = findViewById(R.id.recycler_view);
 //        recyclerView.addItemDecoration(new DividerItemDecoration(this,  LinearLayoutManager.VERTICAL));
 //        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(deviceAdapter);
+        SwipeController swipeController = new SwipeController();
+        ItemTouchHelper itemTouchhelper = new ItemTouchHelper(swipeController);
+        itemTouchhelper.attachToRecyclerView(recyclerView);
+
+//        swipeController = new SwipeController(new Try_swipeControlleraction() {
+//            public void onRightClicked(int position) {
+//                deviceAdapter.list_device.remove(position);
+//                deviceAdapter.notifyItemRemoved(position);
+//                deviceAdapter.notifyItemRangeChanged(position, deviceAdapter.getItemCount());
+//            }
+//        });
+//
+//        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+//            @Override
+//            public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
+//                swipeController.onDraw(c);
+//            }
+//        });
+//        endregion
         actionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,22 +69,5 @@ public class Devicelist_Activity_main extends AppCompatActivity {
             }
         });
 
-        ItemTouchHelper itemTouchhelper = new ItemTouchHelper(swipeController);
-        itemTouchhelper.attachToRecyclerView(recyclerView);
-
-        swipeController = new SwipeController(new Try_swipeControlleraction() {
-            public void onRightClicked(int position) {
-                deviceAdapter.list_device.remove(position);
-                deviceAdapter.notifyItemRemoved(position);
-                deviceAdapter.notifyItemRangeChanged(position, deviceAdapter.getItemCount());
-            }
-        });
-
-        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
-            @Override
-            public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
-                swipeController.onDraw(c);
-            }
-        });
     }
 }
