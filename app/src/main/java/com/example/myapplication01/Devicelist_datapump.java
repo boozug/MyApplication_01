@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @SuppressWarnings("ALL")
-public class TryexpandableListDatapump {
+public class Devicelist_datapump {
 
     public static HashMap<String, List<String>> getData() {
         HashMap<String, List<String>> expandableListDetail = new HashMap<String, List<String>>();

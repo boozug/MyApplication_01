@@ -10,20 +10,18 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication01.TryActivityMainActivity;
-
 import com.google.android.material.snackbar.Snackbar;
 
-import static com.example.myapplication01.TryActivityMainActivity.device_list;
+import static com.example.myapplication01.Adddevice_activity_1.device_list;
 
-public class Adddevice extends AppCompatActivity {
+public class Adddevice_activity_2 extends AppCompatActivity {
 //    private SQLiteDatabase mDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adddevice);
         
-        DBUserAdapter dbUser = new DBUserAdapter(Adddevice.this);
+        Addevice_DBUserAdapter dbUser = new Addevice_DBUserAdapter(Adddevice_activity_2.this);
 //        region Binding layout object to java class
         TextView txthostadd1 = findViewById(R.id.Txtipfield1);
         TextView txthostadd2 = findViewById(R.id.Txtipfield2);
@@ -49,13 +47,14 @@ public class Adddevice extends AppCompatActivity {
                 String destinationtimeout = txtdesTimeout.getText().toString();
                 if(resultcheck(address,portnumber,desportnumber,timeout,destinationtimeout) ==true)
                 {
-                    Add_device_part2(address,portnumber,desportnumber,timeout,destinationtimeout);
                     dbUser.open();
+                    int profile_counts = dbUser.getProfilesCount();
+                    Add_device_part2(address,portnumber,desportnumber,timeout,destinationtimeout);
                     try {
-                        dbUser.AddDevice(device_list);
-                        Toast.makeText(Adddevice.this, "Add device successful", Toast.LENGTH_SHORT).show();
+                        dbUser.AddDevice(profile_counts,device_list);
+                        Toast.makeText(Adddevice_activity_2.this, "Add device successful", Toast.LENGTH_SHORT).show();
                         dbUser.close();
-                        Intent intent = new Intent(Adddevice.this,try_Country_activity_main.class);
+                        Intent intent = new Intent(Adddevice_activity_2.this, Devicelist_Activity_main.class);
                         startActivity(intent);
 
                     } catch (SQLiteException e) {

@@ -5,43 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".LoginActivity">
-
-    <Button
-        android:id="@+id/btn_checkrecyclerview"
-        android:layout_width="wrap_content"
-        android:layout_height="39dp"
-        android:layout_below="@+id/btn_checkexapadbleview"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="89dp"
-        android:layout_marginLeft="89dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="90dp"
-        android:layout_marginRight="90dp"
-        android:gravity="center_horizontal"
-        android:text="@string/recyclerview" />
-
-    <Button
-        android:id="@+id/btn_checkconnection"
-        android:layout_width="wrap_content"
-        android:layout_height="39dp"
-        android:layout_below="@id/btn_checkrecyclerview"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginLeft="39dp"
-        android:layout_marginTop="-642dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginRight="140dp"
-        android:gravity="center_horizontal"
-        android:text="@string/check_connect" />
+    tools:context=".Login_Mainactivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -137,21 +101,8 @@
         android:textColor="@android:color/background_light"
         android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/btn_checkexapadbleview"
-        android:layout_width="wrap_content"
-        android:layout_height="39dp"
-        android:layout_below="@+id/textView_login"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="-346dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
-        android:gravity="center_horizontal"
-        android:text="@string/expandableview" />
+
+
+
 
 </RelativeLayout>

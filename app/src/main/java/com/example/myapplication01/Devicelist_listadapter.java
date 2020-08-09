@@ -10,13 +10,13 @@ import android.widget.TextView;
 import java.util.HashMap;
 import java.util.List;
 
-public class Trycustomexpandablelistadapter extends BaseExpandableListAdapter {
+public class Devicelist_listadapter extends BaseExpandableListAdapter {
     private Context context;
     private List<String> expandableListTitle;
     private HashMap<String, List<String>> expandableListDetail;
 
-    public Trycustomexpandablelistadapter(Context context, List<String> expandableListTitle,
-                                       HashMap<String, List<String>> expandableListDetail) {
+    public Devicelist_listadapter(Context context, List<String> expandableListTitle,
+                                  HashMap<String, List<String>> expandableListDetail) {
         this.context = context;
         this.expandableListTitle = expandableListTitle;
         this.expandableListDetail = expandableListDetail;

@@ -3,6 +3,7 @@ package com.example.myapplication01;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -11,7 +12,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DBUserAdapter
+public class Addevice_DBUserAdapter
 {
     public static final String KEY_ROWID = "_id";
     public static final String KEY_USERNAME= "username";
@@ -44,7 +45,7 @@ public class DBUserAdapter
     private Context context = null;
 
 
-    public DBUserAdapter(Context ctx)
+    public Addevice_DBUserAdapter(Context ctx)
     {
         this.context = ctx;
         DBHelper = new DatabaseHelper(context);
@@ -96,9 +97,10 @@ public class DBUserAdapter
 
     }
 
-    public void AddDevice(List<String> Device_array) {
+    public void AddDevice(int profile_counts, List<String> Device_array) {
 //        ContentValues initiaValues = new ContentValues();
-        String exec_str = "INSERT INTO device_table VALUES('1',";
+        String profile_countpl = String.valueOf (profile_counts + 1);
+        String exec_str = "INSERT INTO device_table VALUES('" + profile_countpl + "',";
         for (int i = 0; i < Device_array.size(); i++) {
 //            db.execSQL("INSERT INTO device_table VALUES "+s);
             if (i < Device_array.size() - 1) {
@@ -110,8 +112,8 @@ public class DBUserAdapter
         }
     }
 
-        public static ArrayList<try_Device> get_all_devices(){
-        ArrayList<try_Device> arrayList = new ArrayList<>();
+        public static ArrayList<Addevice_UDT_activity> get_all_devices(){
+        ArrayList<Addevice_UDT_activity> arrayList = new ArrayList<>();
 
         // select all query
          String select_query = "SELECT *FROM device_table";
@@ -120,7 +122,7 @@ public class DBUserAdapter
          //looping through all rows and adding to list
          if(cursor.moveToFirst()){
              do {
-                 try_Device Devices = new try_Device();
+                 Addevice_UDT_activity Devices = new Addevice_UDT_activity();
                  Devices.setId(cursor.getString(0));
                  Devices.setIo_number(cursor.getString(1));
                  Devices.setCpu_type(cursor.getString(2));
@@ -143,6 +145,11 @@ public class DBUserAdapter
             }
         }
         return false;
+    }
+
+    public int getProfilesCount(){
+        SQLiteDatabase readableDatabase = db;
+        return (int) DatabaseUtils.queryNumEntries(readableDatabase, "device_table");
     }
 
 }

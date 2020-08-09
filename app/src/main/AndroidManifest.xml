@@ -12,16 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Try_MX_connection"></activity>
-        <activity android:name=".try_Country_activity_main" />
-        <activity android:name=".TryListGroupActivity" />
-        <activity android:name=".TryActivityMainActivity" />
-        <activity android:name=".Adddevice" />
-        <activity
-            android:name=".DevicelistActivity"
-            android:label="@string/title_activity_devicelist"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".Devicelist_Activity_main" />
+        <activity android:name=".Devicelist_listgroupactivity" />
+        <activity android:name=".Adddevice_activity_1" />
+        <activity android:name=".Adddevice_activity_2" />
+        <activity android:name=".Signup_mainactivity" />
+        <activity android:name=".Login_Mainactivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

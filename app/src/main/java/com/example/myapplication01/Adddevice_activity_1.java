@@ -8,14 +8,13 @@ import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class TryActivityMainActivity extends AppCompatActivity {
+public class Adddevice_activity_1 extends AppCompatActivity {
 
     static List<String> device_list = new ArrayList<>();
     static String io_number = new String();
@@ -31,9 +30,9 @@ public class TryActivityMainActivity extends AppCompatActivity {
         setContentView(R.layout.try_activity_main);
         expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
         ImageButton imnextpage = findViewById(R.id.next_Button);
-        expandableListDetail = TryexpandableListDatapump.getData();
+        expandableListDetail = Devicelist_datapump.getData();
         expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
-        expandableListAdapter = new Trycustomexpandablelistadapter(this, expandableListTitle, expandableListDetail);
+        expandableListAdapter = new Devicelist_listadapter(this, expandableListTitle, expandableListDetail);
         expandableListView.setAdapter(expandableListAdapter);
         expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
 
@@ -66,7 +65,7 @@ public class TryActivityMainActivity extends AppCompatActivity {
                 return true;}
                 catch (Exception e)
                 {
-                    Toast.makeText(TryActivityMainActivity.this,e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(Adddevice_activity_1.this,e.getMessage(), Toast.LENGTH_LONG).show();
                 }
                 return false;
             }
@@ -124,7 +123,7 @@ public class TryActivityMainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Intent intent = new Intent((TryActivityMainActivity.this),Adddevice.class);
+                    Intent intent = new Intent((Adddevice_activity_1.this), Adddevice_activity_2.class);
                     startActivity(intent);
                 }
                 }

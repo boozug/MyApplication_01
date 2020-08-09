@@ -1,15 +1,15 @@
 package com.example.myapplication01;
 
-public class try_Device {
+public class Addevice_UDT_activity {
     private String id, io_number, cpu_type, ip_address;
-    public try_Device(String id, String io_number, String cpu_type, String ip_address) {
+    public Addevice_UDT_activity(String id, String io_number, String cpu_type, String ip_address) {
         this.id = id;
         this.io_number = io_number;
         this.cpu_type = cpu_type;
         this.ip_address = ip_address;
     }
 
-    public try_Device() {
+    public Addevice_UDT_activity() {
 
     }
 

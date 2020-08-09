@@ -9,10 +9,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class try_DeviceAdapter extends RecyclerView.Adapter<try_DeviceAdapter.DeviceHolder> {
+public class Devicelist_deviceAdapter extends RecyclerView.Adapter<Devicelist_deviceAdapter.DeviceHolder> {
 
-    List<try_Device> list_device;
-    public try_DeviceAdapter(List<try_Device> list_device) {
+    List<Addevice_UDT_activity> list_device;
+    public Devicelist_deviceAdapter(List<Addevice_UDT_activity> list_device) {
         this.list_device = list_device;
     }
 
@@ -30,7 +30,7 @@ public class try_DeviceAdapter extends RecyclerView.Adapter<try_DeviceAdapter.De
 
     @Override
     public void onBindViewHolder(DeviceHolder holder, int position) {
-        try_Device device = list_device.get(position);
+        Addevice_UDT_activity device = list_device.get(position);
         holder.id.setText(device.getId());
         holder.ionumber.setText(device.getIo_number());
         holder.cputype.setText(device.getCpu_type());

@@ -7,13 +7,12 @@ import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SignupActivity extends AppCompatActivity {
+public class Signup_mainactivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,29 +31,29 @@ public class SignupActivity extends AppCompatActivity {
                 try {
                     if (username.length() >= 8) {
                         if (password.equals(rptpassword) ) {
-                            DBUserAdapter dbUser = new DBUserAdapter(SignupActivity.this);
+                            Addevice_DBUserAdapter dbUser = new Addevice_DBUserAdapter(Signup_mainactivity.this);
                             dbUser.open();
                             try {
                                 dbUser.AddUser(username,password);
-                                Toast.makeText(SignupActivity.this,"Finished. Pls check your account in the login form", Toast.LENGTH_LONG).show();
+                                Toast.makeText(Signup_mainactivity.this,"Finished. Pls check your account in the login form", Toast.LENGTH_LONG).show();
                                 dbUser.close();
                             }
                             catch (SQLiteException e){
-                                Toast.makeText(SignupActivity.this,e.getMessage(), Toast.LENGTH_LONG).show();
+                                Toast.makeText(Signup_mainactivity.this,e.getMessage(), Toast.LENGTH_LONG).show();
                             }
                         }
                         else {
-                            Toast.makeText(SignupActivity.this,"Pls correct password", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Signup_mainactivity.this,"Pls correct password", Toast.LENGTH_LONG).show();
                         }
                     }
                     else
                     {
-                        Toast.makeText(SignupActivity.this,"Pls add an correct User", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Signup_mainactivity.this,"Pls add an correct User", Toast.LENGTH_LONG).show();
                     }
 
                 }
                 catch(Exception e){
-                    Toast.makeText(SignupActivity.this,e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(Signup_mainactivity.this,e.getMessage(), Toast.LENGTH_LONG).show();
 
                 }
             }
@@ -68,7 +67,7 @@ public class SignupActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                Intent intent = new Intent(Signup_mainactivity.this, Login_Mainactivity.class);
                 startActivity(intent);
 
             }
