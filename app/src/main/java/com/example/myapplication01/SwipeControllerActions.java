@@ -1,7 +1,10 @@
 package com.example.myapplication01;
 
-public class Try_swipeControlleraction {
+import android.widget.Toast;
+
+public abstract class SwipeControllerActions {
 
     public void onLeftClicked(int position){}
     public void onRightCliced(int position){}
+
 }

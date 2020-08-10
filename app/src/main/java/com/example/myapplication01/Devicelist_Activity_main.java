@@ -1,17 +1,18 @@
 package com.example.myapplication01;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
 
 import java.util.ArrayList;
 
@@ -21,42 +22,37 @@ public class Devicelist_Activity_main extends AppCompatActivity {
     Devicelist_deviceAdapter deviceAdapter;
     ArrayList<Addevice_UDT_activity> addeviceUDTactivityArrayList = new ArrayList<>();
     FloatingActionButton actionButton;
-    SwipeController swipeController = null;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_try__country_main);
         actionButton = findViewById(R.id.fab);
-//        region-------------------------------------recyclerview setting---------------------------
         addeviceUDTactivityArrayList = Addevice_DBUserAdapter.get_all_devices();
         deviceAdapter = new Devicelist_deviceAdapter(addeviceUDTactivityArrayList);
+
         recyclerView = findViewById(R.id.recycler_view);
-//        recyclerView.addItemDecoration(new DividerItemDecoration(this,  LinearLayoutManager.VERTICAL));
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(deviceAdapter);
-        SwipeController swipeController = new SwipeController();
+
+        SwipeController swipeController = new SwipeController(new SwipeControllerActions(){
+            @Override
+            public void onRightClicked(int position){
+                deviceAdapter.list_device.remove(position);
+            }
+        });
+
         ItemTouchHelper itemTouchhelper = new ItemTouchHelper(swipeController);
         itemTouchhelper.attachToRecyclerView(recyclerView);
 
-//        swipeController = new SwipeController(new Try_swipeControlleraction() {
-//            public void onRightClicked(int position) {
-//                deviceAdapter.list_device.remove(position);
-//                deviceAdapter.notifyItemRemoved(position);
-//                deviceAdapter.notifyItemRangeChanged(position, deviceAdapter.getItemCount());
-//            }
-//        });
-//
-//        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
-//            @Override
-//            public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
-//                swipeController.onDraw(c);
-//            }
-//        });
-//        endregion
+        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
+                swipeController.onDraw(c);
+            }
+        });
+
         actionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +64,5 @@ public class Devicelist_Activity_main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }
