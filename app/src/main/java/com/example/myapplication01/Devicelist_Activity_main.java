@@ -35,23 +35,42 @@ public class Devicelist_Activity_main extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(deviceAdapter);
-
-        SwipeController swipeController = new SwipeController(new SwipeControllerActions(){
+        //---------------------------------------region swipe right action
+        SwipeController swipeController1 = new SwipeController(new SwipeControllerActions(){
             @Override
-            public void onRightClicked(int position){
-                deviceAdapter.list_device.remove(position);
+            public void onRightClicked(int position) {
+                Toast.makeText(Devicelist_Activity_main.this, "right finshed", Toast.LENGTH_LONG).show();
             }
         });
-
-        ItemTouchHelper itemTouchhelper = new ItemTouchHelper(swipeController);
-        itemTouchhelper.attachToRecyclerView(recyclerView);
+        ItemTouchHelper itemTouchhelper1 = new ItemTouchHelper(swipeController1);
+        itemTouchhelper1.attachToRecyclerView(recyclerView);
 
         recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
             @Override
             public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
-                swipeController.onDraw(c);
+                swipeController1.onDraw(c);
             }
         });
+        //endregion
+
+        //-----------------------------------region swipe left action
+        SwipeController swipeController2 = new SwipeController(new SwipeControllerActions(){
+            @Override
+            public void onLeftClicked(int position) {
+                Toast.makeText(Devicelist_Activity_main.this, "left finshed", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        ItemTouchHelper itemTouchhelper2 = new ItemTouchHelper(swipeController2);
+        itemTouchhelper2.attachToRecyclerView(recyclerView);
+
+        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
+                swipeController2.onDraw(c);
+            }
+        });
+        //endregion
 
         actionButton.setOnClickListener(new View.OnClickListener() {
             @Override
