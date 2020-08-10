@@ -45,6 +45,7 @@
     <string name="ip_address">IP Address</string>
     <string name="time_out">Time out</string>
     <string name="destination_timeout">Destination timeout</string>
+    <string name="button">Button</string>
     <string-array name="group1">
         <item>item1</item>
         <item>item2</item>

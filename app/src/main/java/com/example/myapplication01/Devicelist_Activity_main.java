@@ -35,39 +35,24 @@ public class Devicelist_Activity_main extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(deviceAdapter);
-        //---------------------------------------region swipe right action
-        SwipeController swipeController1 = new SwipeController(new SwipeControllerActions(){
+        //---------------------------------------region swipe action
+        SwipeController swipeController = new SwipeController(new SwipeControllerActions(){
             @Override
             public void onRightClicked(int position) {
                 Toast.makeText(Devicelist_Activity_main.this, "right finshed", Toast.LENGTH_LONG).show();
             }
-        });
-        ItemTouchHelper itemTouchhelper1 = new ItemTouchHelper(swipeController1);
-        itemTouchhelper1.attachToRecyclerView(recyclerView);
-
-        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
-            @Override
-            public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
-                swipeController1.onDraw(c);
-            }
-        });
-        //endregion
-
-        //-----------------------------------region swipe left action
-        SwipeController swipeController2 = new SwipeController(new SwipeControllerActions(){
             @Override
             public void onLeftClicked(int position) {
                 Toast.makeText(Devicelist_Activity_main.this, "left finshed", Toast.LENGTH_LONG).show();
             }
         });
-
-        ItemTouchHelper itemTouchhelper2 = new ItemTouchHelper(swipeController2);
-        itemTouchhelper2.attachToRecyclerView(recyclerView);
+        ItemTouchHelper itemTouchpapers1 = new ItemTouchHelper(swipeController);
+        itemTouchpapers1.attachToRecyclerView(recyclerView);
 
         recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
             @Override
             public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
-                swipeController2.onDraw(c);
+                swipeController.onDraw(c);
             }
         });
         //endregion
