@@ -37,7 +37,6 @@
     <string name="add_device">add device</string>
     <string name="back_to_previous">back to previous</string>
     <string name="group">group1</string>
-    <string name="button">Button</string>
     <string name="expandableview">expandableview</string>
     <string name="already_a_mevn_s_family_click_here_to_login">Already a MEVN\'s family? Click here to login</string>
     <string name="recyclerview">RecyclerView</string>

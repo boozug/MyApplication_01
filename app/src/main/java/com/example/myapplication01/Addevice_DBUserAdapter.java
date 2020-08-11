@@ -112,6 +112,12 @@ public class Addevice_DBUserAdapter
         }
     }
 
+    public static void delete_rowsdatabase(int position) {
+        String str_value = String.valueOf(position + 1);
+        String exec_str = "DELETE FROM device_table WHERE _id = " + str_value + ";";
+        db.execSQL(exec_str);
+    }
+
         public static ArrayList<Addevice_UDT_activity> get_all_devices(){
         ArrayList<Addevice_UDT_activity> arrayList = new ArrayList<>();
 

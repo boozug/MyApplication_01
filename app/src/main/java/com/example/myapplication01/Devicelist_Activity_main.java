@@ -8,12 +8,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-
+import com.example.myapplication01.Addevice_DBUserAdapter;
 import java.util.ArrayList;
 
 public class Devicelist_Activity_main extends AppCompatActivity {
@@ -39,8 +40,15 @@ public class Devicelist_Activity_main extends AppCompatActivity {
         SwipeController swipeController = new SwipeController(new SwipeControllerActions(){
             @Override
             public void onRightClicked(int position) {
+                dbUser.open();
+                dbUser.delete_rowsdatabase(position);
+                dbUser.close();
                 Toast.makeText(Devicelist_Activity_main.this, "right finshed", Toast.LENGTH_LONG).show();
+                dbUser.get_all_devices();
             }
+
+
+
             @Override
             public void onLeftClicked(int position) {
                 Toast.makeText(Devicelist_Activity_main.this, "left finshed", Toast.LENGTH_LONG).show();
