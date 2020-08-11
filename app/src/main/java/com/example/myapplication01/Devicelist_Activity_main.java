@@ -40,11 +40,14 @@ public class Devicelist_Activity_main extends AppCompatActivity {
         SwipeController swipeController = new SwipeController(new SwipeControllerActions(){
             @Override
             public void onRightClicked(int position) {
-                dbUser.open();
-                dbUser.delete_rowsdatabase(position);
-                dbUser.close();
-                Toast.makeText(Devicelist_Activity_main.this, "right finshed", Toast.LENGTH_LONG).show();
-                dbUser.get_all_devices();
+//                dbUser.open();
+//                dbUser.delete_rowsdatabase(position);ba
+//                dbUser.close();
+//                Toast.makeText(Devicelist_Activity_main.this, "right finshed", Toast.LENGTH_LONG).show();
+//                dbUser.get_all_devices();
+                deviceAdapter.list_device.remove(position);
+                deviceAdapter.notifyItemRemoved(position);
+                deviceAdapter.notifyItemRangeChanged(position,deviceAdapter.getItemCount());
             }
 
 
