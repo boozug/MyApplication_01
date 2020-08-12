@@ -28,7 +28,7 @@ public class Adddevice_activity_1 extends AppCompatActivity {
         HashMap<String, List<String>> expandableListDetail;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.try_activity_main);
-        expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
+        expandableListView = findViewById(R.id.expandableListView);
         ImageButton imnextpage = findViewById(R.id.next_Button);
         expandableListDetail = Devicelist_datapump.getData();
         expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
