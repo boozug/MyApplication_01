@@ -112,11 +112,21 @@ public class Addevice_DBUserAdapter
         }
     }
 
-    public static void delete_rowsdatabase(int position) {
+    public static ArrayList<Replace_device_temp_UDT_activity_devices>remove_device_left(int position){
+        ArrayList<Replace_device_temp_UDT_activity_devices>  arrayList = new ArrayList<>();
 
-        String str_value = String.valueOf(position + 1);
-        String exec_str = "DELETE FROM device_table WHERE _id = " + str_value + ";";
-        db.execSQL(exec_str);
+        // select all query left
+        String select_query = "SELECT *FROM device table WHERE _id > "+ String.valueOf(position) +" ;";
+        SQLiteDatabase db = DBHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(select_query,null);
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()){
+            do{
+                Replace_device_temp_UDT_activity_devices = new Replace_device_temp_UDT_activity_devices();
+            }
+
+        }
+
     }
 
         public static ArrayList<Addevice_UDT_activity> get_all_devices(){
@@ -140,6 +150,7 @@ public class Addevice_DBUserAdapter
          DBHelper.close();
          return arrayList;
      }
+
 
 
     public boolean Login(String username, String password) throws SQLException
