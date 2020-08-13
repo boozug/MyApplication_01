@@ -1,8 +1,9 @@
 package com.example.myapplication01;
 
 public class Replace_device_temp_UDT_activity_devices {
-    private String ionumber, cputype, unittype, ipaddress, portnumber, destinationportnumber, timeout, destinationtimeout;
-    public Replace_device_temp_UDT_activity_devices(String ionumber, String cputype, String unittype, String ipaddress, String portnumber, String destinationportnumber, String timeout, String destinationtimeout){
+    private String id, ionumber, cputype, unittype, ipaddress, portnumber, destinationportnumber, timeout, destinationtimeout;
+    public Replace_device_temp_UDT_activity_devices(String id,String ionumber, String cputype, String unittype, String ipaddress, String portnumber, String destinationportnumber, String timeout, String destinationtimeout){
+        this.id = id;
         this.ionumber = ionumber;
         this.cputype = cputype;
         this.unittype = unittype;
@@ -16,11 +17,19 @@ public class Replace_device_temp_UDT_activity_devices {
 
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getIonumber(){
         return ionumber;
     }
 
-    public void setIonumber(){
+    public void setIonumber(String ionumber){
         this.ionumber = ionumber;
     }
 
@@ -28,7 +37,7 @@ public class Replace_device_temp_UDT_activity_devices {
         return cputype;
     }
 
-    public void setCputype(){
+    public void setCputype(String cputype){
         this.cputype = cputype;
     }
 
@@ -36,7 +45,7 @@ public class Replace_device_temp_UDT_activity_devices {
         return unittype;
     }
 
-    public void setUnittype(){
+    public void setUnittype(String unittype){
         this.unittype = unittype;
     }
 
@@ -44,7 +53,7 @@ public class Replace_device_temp_UDT_activity_devices {
         return ipaddress;
     }
 
-    public void setIpaddress(){
+    public void setIpaddress(String ipaddress){
         this.ipaddress = ipaddress;
     }
 
@@ -52,7 +61,7 @@ public class Replace_device_temp_UDT_activity_devices {
         return portnumber;
     }
 
-    public void setPortnumber(){
+    public void setPortnumber(String portnumber){
         this.portnumber = portnumber;
     }
 
@@ -60,7 +69,7 @@ public class Replace_device_temp_UDT_activity_devices {
         return destinationportnumber;
     }
 
-    public void setDestinationportnumber(){
+    public void setDestinationportnumber(String destinationportnumber){
         this.destinationportnumber= destinationportnumber;
     }
 
@@ -68,7 +77,7 @@ public class Replace_device_temp_UDT_activity_devices {
         return timeout;
     }
 
-    public void setTimeout(){
+    public void setTimeout(String timeout){
         this.timeout = timeout;
     }
 
@@ -76,7 +85,7 @@ public class Replace_device_temp_UDT_activity_devices {
         return destinationtimeout;
     }
 
-    public void setDestinationtimeout(){
+    public void setDestinationtimeout(String destinationtimeout){
         this.destinationtimeout = destinationtimeout;
     }
 }

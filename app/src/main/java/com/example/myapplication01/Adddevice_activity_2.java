@@ -54,6 +54,7 @@ public class Adddevice_activity_2 extends AppCompatActivity {
                         dbUser.AddDevice(profile_counts,device_list);
                         Toast.makeText(Adddevice_activity_2.this, "Add device successful", Toast.LENGTH_SHORT).show();
                         dbUser.close();
+
                         device_list.clear();
                         Intent intent = new Intent(Adddevice_activity_2.this, Devicelist_Activity_main.class);
                         startActivity(intent);
@@ -78,6 +79,7 @@ public class Adddevice_activity_2 extends AppCompatActivity {
 
             private boolean resultcheck (String address,String portnumber,String desportnumber,String timeout,String destinationtimeout) {
                 if (address.equals("...") | portnumber.equals("") | desportnumber.equals("") | timeout.equals("") | destinationtimeout.equals("")) {
+                    Toast.makeText(Adddevice_activity_2.this, "pls check ur field", Toast.LENGTH_LONG).show();
                     return false;
                 }
                 return true;

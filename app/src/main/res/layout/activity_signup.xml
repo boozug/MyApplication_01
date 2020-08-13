@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@color/cardview_light_background"
     tools:context=".Signup_mainactivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="120dp"
-        android:layout_height="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp"
         android:contentDescription="@string/todo"
         android:foregroundGravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/pngwave" />
+
 
     <EditText
         android:id="@+id/Txtname"
@@ -98,8 +97,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cardview_items"
-        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:text="@string/already_a_mevn_s_family_click_here_to_login"
         android:textColor="@android:color/background_light"
         android:textSize="18sp" />

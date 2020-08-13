@@ -17,9 +17,9 @@ import java.util.List;
 public class Adddevice_activity_1 extends AppCompatActivity {
 
     static List<String> device_list = new ArrayList<>();
-    static String io_number = new String();
-    static String cpu_type = new String();
-    static String unit_type = new String();
+    String io_number = new String();
+    String cpu_type = new String();
+    String unit_type = new String();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ExpandableListView expandableListView;

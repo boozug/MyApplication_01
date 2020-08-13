@@ -23,6 +23,7 @@ public class Devicelist_Activity_main extends AppCompatActivity {
     Devicelist_deviceAdapter deviceAdapter;
     ArrayList<Addevice_UDT_activity> addeviceUDTactivityArrayList = new ArrayList<>();
     FloatingActionButton actionButton;
+    ArrayList<Replace_device_temp_UDT_activity_devices> array_buffer_before_del = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,13 @@ public class Devicelist_Activity_main extends AppCompatActivity {
         SwipeController swipeController = new SwipeController(new SwipeControllerActions(){
             @Override
             public void onRightClicked(int position) {
+                if(position+1 == deviceAdapter.getItemCount()| position == 0){
+                    Addevice_DBUserAdapter.delete_selected_rows(position,Devicelist_Activity_main.this);
+                }
+                else {
+                    array_buffer_before_del = Addevice_DBUserAdapter.remove_device_left(position);
+                    Addevice_DBUserAdapter.delete_selected_rows(position,Devicelist_Activity_main.this);
+                    Addevice_DBUserAdapter.update_database_moveup(array_buffer_before_del,Devicelist_Activity_main.this);}
                 deviceAdapter.list_device.remove(position);
                 deviceAdapter.notifyItemRemoved(position);
                 deviceAdapter.notifyItemRangeChanged(position,deviceAdapter.getItemCount());
