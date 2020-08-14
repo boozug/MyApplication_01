@@ -31,17 +31,13 @@ public class Adddevice_activity_1 extends AppCompatActivity {
         expandableListView = findViewById(R.id.expandableListView);
         ImageButton imnextpage = findViewById(R.id.next_Button);
         expandableListDetail = Devicelist_datapump.getData();
-        expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
+        expandableListTitle = new ArrayList<>(expandableListDetail.keySet());
         expandableListAdapter = new Devicelist_listadapter(this, expandableListTitle, expandableListDetail);
         expandableListView.setAdapter(expandableListAdapter);
-        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-
-            @Override
-            public void onGroupExpand(int groupPosition) {
+        expandableListView.setOnGroupExpandListener(groupPosition -> {
 //                Toast.makeText(getApplicationContext(),
 //                        expandableListTitle.get(groupPosition) + " List Expanded.",
 //                        Toast.LENGTH_SHORT).show();
-            }
         });
 
         expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
@@ -115,18 +111,15 @@ public class Adddevice_activity_1 extends AppCompatActivity {
             }
         });
 
-        imnextpage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (io_number.equals("") | cpu_type.equals("") | unit_type.equals("")){
-                    Toast.makeText(getApplicationContext(),"Pls fill all the form before",Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    Intent intent = new Intent((Adddevice_activity_1.this), Adddevice_activity_2.class);
-                    startActivity(intent);
-                }
-                }
-        });
+        imnextpage.setOnClickListener(view -> {
+            if (io_number.equals("") | cpu_type.equals("") | unit_type.equals("")){
+                Toast.makeText(getApplicationContext(),"Pls fill all the form before",Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                Intent intent = new Intent((Adddevice_activity_1.this), Adddevice_activity_2.class);
+                startActivity(intent);
+            }
+            });
     }
 }
