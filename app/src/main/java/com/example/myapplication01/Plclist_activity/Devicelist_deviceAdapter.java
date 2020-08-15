@@ -1,4 +1,4 @@
-package com.example.myapplication01;
+package com.example.myapplication01.Plclist_activity;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,6 +6,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myapplication01.Adddevice_activity.Addevice_UDT_activity;
+import com.example.myapplication01.R;
 
 import java.util.List;
 

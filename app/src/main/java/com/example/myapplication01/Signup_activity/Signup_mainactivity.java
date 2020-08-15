@@ -1,4 +1,4 @@
-package com.example.myapplication01;
+package com.example.myapplication01.Signup_activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,10 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.myapplication01.Adddevice_activity.Addevice_DBUserAdapter;
+import com.example.myapplication01.Login_activity.Login_Mainactivity;
+import com.example.myapplication01.R;
 
 public class Signup_mainactivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.myapplication01;
+package com.example.myapplication01.Adddevice_activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,10 @@ import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import com.example.myapplication01.Plclist_activity.Devicelist_datapump;
+import com.example.myapplication01.Plclist_activity.Devicelist_listadapter;
+import com.example.myapplication01.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,7 +31,7 @@ public class Adddevice_activity_1 extends AppCompatActivity {
         List<String> expandableListTitle;
         HashMap<String, List<String>> expandableListDetail;
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.try_activity_main);
+        setContentView(R.layout.try_add_device_activity1);
         expandableListView = findViewById(R.id.expandableListView);
         ImageButton imnextpage = findViewById(R.id.next_Button);
         expandableListDetail = Devicelist_datapump.getData();

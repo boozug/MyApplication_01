@@ -23,11 +23,15 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="1b69890e-af06-4a96-9df3-25b32ededf58">
+        <schema name="main" object-types="view, table" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1b69890e-af06-4a96-9df3-25b32ededf58">
-      <console name="Connection" type="STANDARD" schema="" session="Main" />
+      <console name="Connection" type="STANDARD" schema="main" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -37,6 +41,11 @@
     <connection id="1b69890e-af06-4a96-9df3-25b32ededf58" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="1b69890e-af06-4a96-9df3-25b32ededf58" dataset="main.users" active-filter-id="a5bbcf82-b264-40b3-9197-bdd75c322c88">
+      <filter id="a5bbcf82-b264-40b3-9197-bdd75c322c88" name="10" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="_id" operator="&lt;" value="10" active="true" />
+      </filter>
+    </filter-actions>
     <filter-actions connection-id="1b69890e-af06-4a96-9df3-25b32ededf58" dataset="main.device_table" active-filter-id="7b0f4e9c-7ee6-441a-8129-2fecb8b93f79">
       <filter id="7b0f4e9c-7ee6-441a-8129-2fecb8b93f79" name="10" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="_id" operator="&lt;" value="10" active="true" />

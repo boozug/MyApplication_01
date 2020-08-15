@@ -1,4 +1,4 @@
-package com.example.myapplication01;
+package com.example.myapplication01.Plclist_activity;
 
 public class Replace_device_temp_UDT_activity_devices {
     private String id, ionumber, cputype, unittype, ipaddress, portnumber, destinationportnumber, timeout, destinationtimeout;

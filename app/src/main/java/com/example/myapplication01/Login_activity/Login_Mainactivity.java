@@ -1,4 +1,4 @@
-package com.example.myapplication01;
+package com.example.myapplication01.Login_activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myapplication01.Adddevice_activity.Addevice_DBUserAdapter;
+import com.example.myapplication01.Plclist_activity.Devicelist_Activity_main;
+import com.example.myapplication01.R;
+import com.example.myapplication01.Signup_activity.Signup_mainactivity;
 
 public class Login_Mainactivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.myapplication01;
+package com.example.myapplication01.Adddevice_activity;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -10,6 +10,8 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.example.myapplication01.Plclist_activity.Replace_device_temp_UDT_activity_devices;
 
 import java.util.ArrayList;
 import java.util.List;

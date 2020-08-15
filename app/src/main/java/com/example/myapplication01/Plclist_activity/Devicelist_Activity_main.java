@@ -1,20 +1,24 @@
-package com.example.myapplication01;
+package com.example.myapplication01.Plclist_activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.ItemTouchHelper;
+
+import com.example.myapplication01.Adddevice_activity.Adddevice_activity_1;
+import com.example.myapplication01.Adddevice_activity.Addevice_DBUserAdapter;
+import com.example.myapplication01.Adddevice_activity.Addevice_UDT_activity;
+import com.example.myapplication01.Devices_interface_activity.Device_interface_mainactivity;
+import com.example.myapplication01.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.myapplication01.Addevice_DBUserAdapter;
 import java.util.ArrayList;
 
 public class Devicelist_Activity_main extends AppCompatActivity {
@@ -28,7 +32,7 @@ public class Devicelist_Activity_main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_try__country_main);
+        setContentView(R.layout.activity_device_list_activity);
         actionButton = findViewById(R.id.fab);
         addeviceUDTactivityArrayList = Addevice_DBUserAdapter.get_all_devices();
         deviceAdapter = new Devicelist_deviceAdapter(addeviceUDTactivityArrayList);
@@ -52,12 +56,10 @@ public class Devicelist_Activity_main extends AppCompatActivity {
                 deviceAdapter.notifyItemRemoved(position);
                 deviceAdapter.notifyItemRangeChanged(position,deviceAdapter.getItemCount());
             }
-
-
-
             @Override
             public void onLeftClicked(int position) {
-                Toast.makeText(Devicelist_Activity_main.this, "left finshed", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Devicelist_Activity_main.this, Device_interface_mainactivity.class);
+                startActivity(intent);
             }
         });
         ItemTouchHelper itemTouchpapers1 = new ItemTouchHelper(swipeController);
@@ -78,7 +80,7 @@ public class Devicelist_Activity_main extends AppCompatActivity {
             }
 
             private void show_insertactivity() {
-                Intent intent = new Intent(Devicelist_Activity_main.this, Adddevice_activity_1.class);
+                Intent intent = new Intent(Devicelist_Activity_main.this, Device_interface_mainactivity.class);
                 startActivity(intent);
             }
         });

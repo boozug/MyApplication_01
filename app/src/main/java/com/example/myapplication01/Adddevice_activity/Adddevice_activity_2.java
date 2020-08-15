@@ -1,4 +1,4 @@
-package com.example.myapplication01;
+package com.example.myapplication01.Adddevice_activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,16 +10,18 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication01.Plclist_activity.Devicelist_Activity_main;
+import com.example.myapplication01.R;
 import com.google.android.material.snackbar.Snackbar;
 
-import static com.example.myapplication01.Adddevice_activity_1.device_list;
+import static com.example.myapplication01.Adddevice_activity.Adddevice_activity_1.device_list;
 
 public class Adddevice_activity_2 extends AppCompatActivity {
 //    private SQLiteDatabase mDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adddevice);
+        setContentView(R.layout.activity_add_device_activity2);
         
         Addevice_DBUserAdapter dbUser = new Addevice_DBUserAdapter(Adddevice_activity_2.this);
 //        region Binding layout object to java class

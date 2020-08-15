@@ -1,4 +1,4 @@
-package com.example.myapplication01;
+package com.example.myapplication01.Adddevice_activity;
 
 public class Addevice_UDT_activity {
     private String id, io_number, cpu_type, ip_address;

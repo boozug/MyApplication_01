@@ -1,4 +1,4 @@
-package com.example.myapplication01;
+package com.example.myapplication01.Plclist_activity;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -163,7 +163,7 @@ class SwipeController extends Callback{
         RectF leftButton = new RectF(itemView.getLeft(), itemView.getTop(), itemView.getLeft() + buttonWidthWithoutPadding, itemView.getBottom());
         p.setColor(Color.BLUE);
         c.drawRoundRect(leftButton, corners, corners, p);
-        drawText("EDIT", c, leftButton, p);
+        drawText("OPEN", c, leftButton, p);
 
         RectF rightButton = new RectF(itemView.getRight() - buttonWidthWithoutPadding, itemView.getTop(), itemView.getRight(), itemView.getBottom());
         p.setColor(Color.RED);
