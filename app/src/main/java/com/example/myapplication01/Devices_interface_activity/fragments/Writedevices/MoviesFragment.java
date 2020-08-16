@@ -1,5 +1,4 @@
-package com.example.myapplication01.Devices_interface_activity.fragments;
-
+package com.example.myapplication01.Devices_interface_activity.fragments.Writedevices;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +8,9 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.example.myapplication01.R;
-public class EventsFragment extends Fragment {
+
+
+public class MoviesFragment extends Fragment {
 
     @Override
     public View onCreateView(
@@ -17,6 +18,6 @@ public class EventsFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_events, container, false);
+        return inflater.inflate(R.layout.fragment_movies, container, false);
     }
 }

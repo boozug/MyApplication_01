@@ -53,7 +53,6 @@ public class Addevice_DBUserAdapter
     {
         this.context = ctx;
         DBHelper = new DatabaseHelper(context);
-//        DBHelper.onCreate(db);
     }
 
     static class DatabaseHelper extends SQLiteOpenHelper
@@ -209,8 +208,27 @@ public class Addevice_DBUserAdapter
          return arrayList;
      }
 
+//     region ---------------------read data cursor
 
+    public static List<String> read_data_cursor_to_list(Context context,int position){
+        List<String> Pac_attribute = new ArrayList<>();
+        String select_query = "SELECT * FROM device_table WHERE _id = "+ (position+1) +" ;";
+        try{
+        SQLiteDatabase db = DBHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(select_query,null);
+        }
+        catch (SQLiteException e){
+            Toast.makeText(context,e.getMessage(),Toast.LENGTH_SHORT).show();
+        };
 
+        DBHelper.close();
+//        for (int s = 0; s<= 8;s++){
+//            Pac_attribute.add(cursor.getString(s));
+//        }
+        return Pac_attribute;
+    }
+
+//     endregion
     public boolean Login(String username, String password) throws SQLException
     {
         Cursor mCursor = db.rawQuery("SELECT * FROM " + DATABASE_TABLE + " WHERE username=? AND password=?", new String[]{username,password});

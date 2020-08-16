@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.myapplication01.Devices_interface_activity.fragments.EventsFragment;
-import com.example.myapplication01.Devices_interface_activity.fragments.MoviesFragment;
-import com.example.myapplication01.Devices_interface_activity.fragments.TicketsFragment;
+import com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.EventsFragment;
+import com.example.myapplication01.Devices_interface_activity.fragments.Writedevices.MoviesFragment;
+import com.example.myapplication01.Devices_interface_activity.fragments.Logging.TicketsFragment;
 
 public class FragmentAdapterPage extends FragmentStateAdapter {
     private static final int CARD_ITEM_SIZE = 3;

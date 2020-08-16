@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication01.Adddevice_activity.Adddevice_activity_1;
 import com.example.myapplication01.Adddevice_activity.Addevice_DBUserAdapter;
 import com.example.myapplication01.Adddevice_activity.Addevice_UDT_activity;
-import com.example.myapplication01.Devices_interface_activity.fragments.EventsFragment;
 import com.example.myapplication01.Devices_interface_activity.ui.Interface_mainpage;
 import com.example.myapplication01.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,12 +20,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 public class Devicelist_Activity_main extends AppCompatActivity {
-    Addevice_DBUserAdapter dbUser = new Addevice_DBUserAdapter(Devicelist_Activity_main.this);
     RecyclerView recyclerView;
     Devicelist_deviceAdapter deviceAdapter;
     ArrayList<Addevice_UDT_activity> addeviceUDTactivityArrayList = new ArrayList<>();
     FloatingActionButton actionButton;
     ArrayList<Replace_device_temp_UDT_activity_devices> array_buffer_before_del = new ArrayList<>();
+    public static int Count_save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +39,7 @@ public class Devicelist_Activity_main extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(deviceAdapter);
+
         //---------------------------------------region swipe action
         SwipeController swipeController = new SwipeController(new SwipeControllerActions(){
             @Override
@@ -50,13 +50,15 @@ public class Devicelist_Activity_main extends AppCompatActivity {
                 else {
                     array_buffer_before_del = Addevice_DBUserAdapter.remove_device_left(position);
                     Addevice_DBUserAdapter.delete_selected_rows(position,Devicelist_Activity_main.this);
-                    Addevice_DBUserAdapter.update_database_moveup(array_buffer_before_del,Devicelist_Activity_main.this);}
+                    Addevice_DBUserAdapter.update_database_moveup(array_buffer_before_del,Devicelist_Activity_main.this);
+                }
                 deviceAdapter.list_device.remove(position);
                 deviceAdapter.notifyItemRemoved(position);
                 deviceAdapter.notifyItemRangeChanged(position,deviceAdapter.getItemCount());
             }
             @Override
             public void onLeftClicked(int position) {
+                Count_save = position;
                 Intent intent = new Intent(Devicelist_Activity_main.this, Interface_mainpage.class);
                 startActivity(intent);
             }
