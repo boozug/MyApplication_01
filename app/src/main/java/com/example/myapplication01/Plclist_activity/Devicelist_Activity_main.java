@@ -1,23 +1,22 @@
 package com.example.myapplication01.Plclist_activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.ItemTouchHelper;
-
-import com.example.myapplication01.Adddevice_activity.Adddevice_activity_1;
-import com.example.myapplication01.Adddevice_activity.Addevice_DBUserAdapter;
-import com.example.myapplication01.Adddevice_activity.Addevice_UDT_activity;
-import com.example.myapplication01.Devices_interface_activity.Device_interface_mainactivity;
-import com.example.myapplication01.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myapplication01.Adddevice_activity.Adddevice_activity_1;
+import com.example.myapplication01.Adddevice_activity.Addevice_DBUserAdapter;
+import com.example.myapplication01.Adddevice_activity.Addevice_UDT_activity;
+import com.example.myapplication01.Devices_interface_activity.fragments.EventsFragment;
+import com.example.myapplication01.Devices_interface_activity.ui.Interface_mainpage;
+import com.example.myapplication01.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -58,7 +57,7 @@ public class Devicelist_Activity_main extends AppCompatActivity {
             }
             @Override
             public void onLeftClicked(int position) {
-                Intent intent = new Intent(Devicelist_Activity_main.this, Device_interface_mainactivity.class);
+                Intent intent = new Intent(Devicelist_Activity_main.this, Interface_mainpage.class);
                 startActivity(intent);
             }
         });
@@ -80,7 +79,7 @@ public class Devicelist_Activity_main extends AppCompatActivity {
             }
 
             private void show_insertactivity() {
-                Intent intent = new Intent(Devicelist_Activity_main.this, Device_interface_mainactivity.class);
+                Intent intent = new Intent(Devicelist_Activity_main.this, Adddevice_activity_1.class);
                 startActivity(intent);
             }
         });
