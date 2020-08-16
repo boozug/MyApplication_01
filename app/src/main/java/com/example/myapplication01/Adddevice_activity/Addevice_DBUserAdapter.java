@@ -216,6 +216,12 @@ public class Addevice_DBUserAdapter
         try{
         SQLiteDatabase db = DBHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(select_query,null);
+        cursor.moveToFirst();
+//        String str1 = cursor.getString(0);
+            for (int i=0; i<=8; i++){
+                Pac_attribute.add(cursor.getString(i));
+            }
+        return Pac_attribute;
         }
         catch (SQLiteException e){
             Toast.makeText(context,e.getMessage(),Toast.LENGTH_SHORT).show();

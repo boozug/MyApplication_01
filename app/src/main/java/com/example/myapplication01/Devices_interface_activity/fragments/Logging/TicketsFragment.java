@@ -48,6 +48,7 @@ public class TicketsFragment extends Fragment {
 
             private void Detect_type_of_value(int pos) {
                 List<String> read_data_cursor_to_list = read_data_cursor_to_list(getActivity(),pos);
+                String str1 = read_data_cursor_to_list.get(0);
 //                Toast.makeText(getActivity(),"hello"+String.valueOf(pos+1),Toast.LENGTH_SHORT).show();
             }
         });
