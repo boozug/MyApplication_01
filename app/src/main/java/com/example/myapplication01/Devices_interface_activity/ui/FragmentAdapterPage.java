@@ -7,7 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.EventsFragment;
 import com.example.myapplication01.Devices_interface_activity.fragments.Writedevices.MoviesFragment;
-import com.example.myapplication01.Devices_interface_activity.fragments.Logging.TicketsFragment;
+import com.example.myapplication01.Devices_interface_activity.fragments.Logging.LoggingFragment;
 
 public class FragmentAdapterPage extends FragmentStateAdapter {
     private static final int CARD_ITEM_SIZE = 3;
@@ -24,7 +24,7 @@ public class FragmentAdapterPage extends FragmentStateAdapter {
             case 1:
                 return new EventsFragment();
             case 2:
-                return new TicketsFragment();
+                return new LoggingFragment();
         }
         return new MoviesFragment();
     }

@@ -24,13 +24,13 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="1b69890e-af06-4a96-9df3-25b32ededf58">
-        <schema name="main" object-types="view, dataset trigger, constraint, table, index, column" />
+      <connection connection-id="f877d438-e091-4d4b-8861-a73e0e2416c6">
+        <schema name="main" object-types="constraint, dataset trigger, table, index, column, view" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="1b69890e-af06-4a96-9df3-25b32ededf58">
+    <connection id="f877d438-e091-4d4b-8861-a73e0e2416c6">
       <console name="Connection" type="STANDARD" schema="main" session="Main" />
     </connection>
   </component>
@@ -38,17 +38,12 @@
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="1b69890e-af06-4a96-9df3-25b32ededf58" />
+    <connection id="f877d438-e091-4d4b-8861-a73e0e2416c6" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="1b69890e-af06-4a96-9df3-25b32ededf58" dataset="main.users" active-filter-id="a5bbcf82-b264-40b3-9197-bdd75c322c88">
-      <filter id="a5bbcf82-b264-40b3-9197-bdd75c322c88" name="10" temporary="false" custom-name="false" type="basic" join-type="AND">
-        <condition column="_id" operator="&lt;" value="10" active="true" />
-      </filter>
-    </filter-actions>
-    <filter-actions connection-id="1b69890e-af06-4a96-9df3-25b32ededf58" dataset="main.device_table" active-filter-id="7b0f4e9c-7ee6-441a-8129-2fecb8b93f79">
-      <filter id="7b0f4e9c-7ee6-441a-8129-2fecb8b93f79" name="10" temporary="false" custom-name="false" type="basic" join-type="AND">
-        <condition column="_id" operator="&lt;" value="10" active="true" />
+    <filter-actions connection-id="f877d438-e091-4d4b-8861-a73e0e2416c6" dataset="main.device_table" active-filter-id="daebd63a-6825-445f-9edd-e94a75035717">
+      <filter id="daebd63a-6825-445f-9edd-e94a75035717" name="10" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="_id" operator="&lt;=" value="10" active="true" />
       </filter>
     </filter-actions>
   </component>
@@ -75,7 +70,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="1b69890e-af06-4a96-9df3-25b32ededf58" active="true">
+      <connection id="f877d438-e091-4d4b-8861-a73e0e2416c6" active="true">
         <database>
           <name value="Connection" />
           <description value="" />
@@ -90,7 +85,7 @@
           <port value="1234" />
           <database value="database" />
           <files>
-            <file path="F:\MitsubishiVietnam\MyApplication_01\usersdb" schema="main" />
+            <file path="D:\Android\MEVN_proj\MyApplication_01\usersdb" schema="main" />
           </files>
           <type value="NONE" />
           <user value="" />
