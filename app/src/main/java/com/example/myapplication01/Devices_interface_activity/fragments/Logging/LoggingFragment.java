@@ -66,7 +66,16 @@ public class LoggingFragment extends Fragment {
         NotificationManagerCompat notificationManagerCompat2 = NotificationManagerCompat.from(getActivity());
 //      endregion
 
-        TextView text = v.findViewById(R.id.textView2);
+//      cputype
+        TextView text1 = v.findViewById(R.id.textView1);
+        TextView text2 = v.findViewById(R.id.textView2);
+//      ionumber
+        TextView text3 = v.findViewById(R.id.textView3);
+        TextView text4 = v.findViewById(R.id.textView4);
+//      unittype
+        TextView text5 = v.findViewById(R.id.textView5);
+        TextView text6 = v.findViewById(R.id.textView6);
+
         int pos = Count_save;
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,12 +86,16 @@ public class LoggingFragment extends Fragment {
             private void Detect_type_of_value(int pos) {
                 List<String> read_data_cursor_to_list = read_data_cursor_to_list(getActivity(), pos);
                 String str0, str1, str2, str3, str4, str5, str6, str7, str8;
-                str1 = String.valueOf(Convert_String_to_int.CPU_type())
-                text.setText(str1);
+                str1 = String.valueOf(Convert_String_to_int.CPU_type(read_data_cursor_to_list.get(1)));
+                str3 = String.valueOf(Convert_String_to_int.Io_number(read_data_cursor_to_list.get(2)));
+                str5 = String.valueOf(Convert_String_to_int.Unit_type(read_data_cursor_to_list.get(3)));
+                text1.setText(str1);
+                text3.setText(str3);
+                text5.setText(str5);
             }
         });
-        bt2.setOnClickListener(view -> notificationManagerCompat1.notify(100, noti001.build()));
-        bt3.setOnClickListener(view -> notificationManagerCompat2.notify(100,noti002.build()));
+        bt2.setOnClickListener(view -> notificationManagerCompat1.notify(1, noti001.build()));
+        bt3.setOnClickListener(view -> notificationManagerCompat2.notify(2,noti002.build()));
         return v;
     }
 
