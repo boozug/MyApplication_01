@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication01.Adddevice_activity.Addevice_DBUserAdapter;
+import com.example.myapplication01.Try_MainActivity;
 import com.example.myapplication01.Plclist_activity.Devicelist_Activity_main;
 import com.example.myapplication01.R;
 import com.example.myapplication01.Signup_activity.Signup_mainactivity;
@@ -25,6 +27,7 @@ public class Login_Mainactivity extends AppCompatActivity {
         RelativeLayout btnLogin = findViewById(R.id.relative_layout_btn);
         final EditText txtUserName = findViewById(R.id.Txtname);
         final EditText txtPassword = findViewById(R.id.Txtpassword);
+        Button rxbtncom = findViewById(R.id.testrx_btn);
         //region signin activity
         btnLogin.setOnClickListener(view -> {
             String username = txtUserName.getText().toString();
@@ -54,6 +57,14 @@ public class Login_Mainactivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Login_Mainactivity.this, Signup_mainactivity.class);
+                startActivity(intent);
+            }
+        });
+
+        rxbtncom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login_Mainactivity.this, Try_MainActivity.class);
                 startActivity(intent);
             }
         });
