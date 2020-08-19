@@ -1,4 +1,4 @@
-package com.example.myapplication01.Devices_interface_activity.ui;
+package com.example.myapplication01.Devices_interface_activity.Commonlib;
 
 public class Convert_String_to_int {
     public static int CPU_type(String CPU_text) {

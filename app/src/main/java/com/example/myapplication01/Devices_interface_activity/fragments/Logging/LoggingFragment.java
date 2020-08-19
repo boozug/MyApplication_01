@@ -1,37 +1,25 @@
 package com.example.myapplication01.Devices_interface_activity.fragments.Logging;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.RelativeLayout;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
-import com.example.myapplication01.Adddevice_activity.Addevice_DBUserAdapter;
-import com.example.myapplication01.Devices_interface_activity.ui.Convert_String_to_int;
-import com.example.myapplication01.Login_activity.Login_Mainactivity;
-import com.example.myapplication01.Plclist_activity.Devicelist_Activity_main;
-import com.example.myapplication01.Plclist_activity.Replace_device_temp_UDT_activity_devices;
+import com.example.myapplication01.Devices_interface_activity.Commonlib.Convert_String_to_int;
 import com.example.myapplication01.R;
-import android.view.View.OnClickListener;
+
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import java.util.List;
 
-import static androidx.core.content.ContextCompat.getSystemService;
 import static com.example.myapplication01.Adddevice_activity.Addevice_DBUserAdapter.read_data_cursor_to_list;
 import static com.example.myapplication01.Plclist_activity.Devicelist_Activity_main.Count_save;
 
