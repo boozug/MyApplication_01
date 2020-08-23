@@ -11,6 +11,7 @@
     <color name="red_300">#3F51B5</color>
     <color name="red_500">#9C27B0</color>
     <color name="red_700">#2196F3</color>
+    <color name="tint_arrow">#6E6E6E</color>
     <color name="blue_100">#00BCD4</color>
     <color name="blue_300">#7BAAF7</color>
     <color name="blue_500">#009688</color>
