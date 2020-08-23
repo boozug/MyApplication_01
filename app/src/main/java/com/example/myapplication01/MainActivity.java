@@ -43,6 +43,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.observables.ConnectableObservable;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
+import io.reactivex.Single;
 
 public class MainActivity extends AppCompatActivity implements TicketsAdapter.TicketsAdapterListener{
     private static final String TAG = MainActivity.class.getSimpleName();

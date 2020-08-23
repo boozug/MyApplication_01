@@ -11,7 +11,10 @@
     <color name="red_300">#3F51B5</color>
     <color name="red_500">#9C27B0</color>
     <color name="red_700">#2196F3</color>
+    <color name="airline_name">#515151</color>
     <color name="tint_arrow">#6E6E6E</color>
+    <color name="lbl_price">#787878</color>
+    <color name="duration">#dd595959</color>
     <color name="blue_100">#00BCD4</color>
     <color name="blue_300">#7BAAF7</color>
     <color name="blue_500">#009688</color>
@@ -20,4 +23,5 @@
     <color name="green_300">#57BB8A</color>
     <color name="green_500">#673AB7</color>
     <color name="green_700">#0B8043</color>
+    <color name="departure">#dd000000</color>
 </resources>
