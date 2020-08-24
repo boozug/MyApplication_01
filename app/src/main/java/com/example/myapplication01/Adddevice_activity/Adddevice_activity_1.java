@@ -26,6 +26,7 @@ public class Adddevice_activity_1 extends AppCompatActivity {
     String unit_type = new String();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //region create expandablelist view
         ExpandableListView expandableListView;
         ExpandableListAdapter expandableListAdapter;
         List<String> expandableListTitle;
@@ -53,7 +54,7 @@ public class Adddevice_activity_1 extends AppCompatActivity {
 
             }
         });
-
+        //endregion
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v,

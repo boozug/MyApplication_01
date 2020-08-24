@@ -79,7 +79,6 @@ public class Addevice_DBUserAdapter
         }
     }
 
-
     public static void open() throws SQLException
     {
         db = DBHelper.getWritableDatabase();
@@ -113,7 +112,7 @@ public class Addevice_DBUserAdapter
         }
     }
 
-//    region -----------------------------update into SQLite database after swipe right
+    //    region ------------------------update into SQLite database after swipe right
     public static void delete_selected_rows(int position,Context context){
         String delete_query = "DELETE FROM device_table WHERE _id >= "+ String.valueOf(position+1) +";";
         SQLiteDatabase db = DBHelper.getWritableDatabase();
@@ -126,7 +125,9 @@ public class Addevice_DBUserAdapter
         }
         DBHelper.close();
     }
+    //    endregion
 
+    //    region update_database_moveup
     public static void update_database_moveup(ArrayList<Replace_device_temp_UDT_activity_devices>  arrayList, Context context){
         for (Replace_device_temp_UDT_activity_devices a: arrayList){
             String id, ionumber, cputype, unittype, ipaddress, portnumber, destinationportnumber, timeout, destinationtimeout;
@@ -158,7 +159,9 @@ public class Addevice_DBUserAdapter
             DBHelper.close();
         }
     }
+    //    endregion
 
+    //region remove device list
     public static ArrayList<Replace_device_temp_UDT_activity_devices>remove_device_left(int position){
         ArrayList<Replace_device_temp_UDT_activity_devices>  arrayList = new ArrayList<>();
         // select all query left
@@ -184,8 +187,8 @@ public class Addevice_DBUserAdapter
         DBHelper.close();
         return arrayList;
     }
-//endregion
-
+    //endregion
+    //    region-------------------------get all devices
         public static ArrayList<Addevice_UDT_activity> get_all_devices(){
         ArrayList<Addevice_UDT_activity> arrayList = new ArrayList<>();
 
@@ -207,9 +210,8 @@ public class Addevice_DBUserAdapter
          DBHelper.close();
          return arrayList;
      }
-
-//     region ---------------------read data cursor
-
+//     endregion
+    //     region ---------------------read data cursor
     public static List<String> read_data_cursor_to_list(Context context,int position){
         List<String> Pac_attribute = new ArrayList<>();
         String select_query = "SELECT * FROM device_table WHERE _id = "+ (position+1) +" ;";
@@ -225,16 +227,12 @@ public class Addevice_DBUserAdapter
         }
         catch (SQLiteException e){
             Toast.makeText(context,e.getMessage(),Toast.LENGTH_SHORT).show();
-        };
-
+        }
         DBHelper.close();
-//        for (int s = 0; s<= 8;s++){
-//            Pac_attribute.add(cursor.getString(s));
-//        }
         return Pac_attribute;
     }
-
-//     endregion
+    //     endregion
+    //region--------------------login form
     public boolean Login(String username, String password) throws SQLException
     {
         Cursor mCursor = db.rawQuery("SELECT * FROM " + DATABASE_TABLE + " WHERE username=? AND password=?", new String[]{username,password});
@@ -251,5 +249,6 @@ public class Addevice_DBUserAdapter
         SQLiteDatabase readableDatabase = db;
         return (int) DatabaseUtils.queryNumEntries(readableDatabase, "device_table");
     }
+    //    endregion
 
 }

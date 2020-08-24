@@ -19,18 +19,15 @@ public class Devicelist_deviceAdapter extends RecyclerView.Adapter<Devicelist_de
         this.list_device = list_device;
     }
 
+    // region inflate layout
     @Override
     public DeviceHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.try_country_row_layout, parent, false);
         return new DeviceHolder(view);
     }
-//
-//    @Override
-//    public void onBindViewHolder(@NonNull CountryHolder holder, int position) {
-//
-//    }
+    //endregion
 
-
+    // region set text layout
     @Override
     public void onBindViewHolder(DeviceHolder holder, int position) {
         Addevice_UDT_activity device = list_device.get(position);
@@ -39,6 +36,7 @@ public class Devicelist_deviceAdapter extends RecyclerView.Adapter<Devicelist_de
         holder.cputype.setText(device.getCpu_type());
         holder.ipaddres.setText(device.getIp_address());
     }
+    //endregion
 
     @Override
     public int getItemCount() {

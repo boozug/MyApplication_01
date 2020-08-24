@@ -32,14 +32,14 @@ public class Devicelist_Activity_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_device_list_activity);
         actionButton = findViewById(R.id.fab);
+        //---------------------------------------region  recyclerView display data
         addeviceUDTactivityArrayList = Addevice_DBUserAdapter.get_all_devices();
         deviceAdapter = new Devicelist_deviceAdapter(addeviceUDTactivityArrayList);
-
         recyclerView = findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(deviceAdapter);
-
+        //endregion
         //---------------------------------------region swipe action
         SwipeController swipeController = new SwipeController(new SwipeControllerActions(){
             @Override

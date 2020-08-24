@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.EventsFragment;
+import com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.Read_devicesFragment;
 import com.example.myapplication01.Devices_interface_activity.fragments.Writedevices.MoviesFragment;
 import com.example.myapplication01.Devices_interface_activity.fragments.Logging.LoggingFragment;
 
@@ -22,7 +22,7 @@ public class FragmentAdapterPage extends FragmentStateAdapter {
             case 0:
                 return new MoviesFragment();
             case 1:
-                return new EventsFragment();
+                return new Read_devicesFragment();
             case 2:
                 return new LoggingFragment();
         }
