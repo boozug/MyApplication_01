@@ -35,15 +35,6 @@ import io.reactivex.functions.Function;
 import io.reactivex.observables.ConnectableObservable;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
-import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.functions.Function;
-import io.reactivex.observables.ConnectableObservable;
-import io.reactivex.observers.DisposableObserver;
-import io.reactivex.schedulers.Schedulers;
-import io.reactivex.Single;
 
 public class MainActivity extends AppCompatActivity implements TicketsAdapter.TicketsAdapterListener{
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -275,6 +266,16 @@ public class MainActivity extends AppCompatActivity implements TicketsAdapter.Ti
                     outRect.top = spacing; // item top
                 }
             }
+        }
+    }
+
+    public static class Connect_activity extends AppCompatActivity {
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_connect_activity);
         }
     }
 }

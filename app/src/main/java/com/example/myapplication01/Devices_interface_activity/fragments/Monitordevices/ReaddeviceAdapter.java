@@ -22,9 +22,9 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
         this.read_device_typeList = readDeviceTypeList;
     }
 
-    public static ArrayList<Read_device_type> get_all_devices() {
-
-    }
+//    public static ArrayList<Read_device_type> get_all_devices() {
+//
+//    }
 
     // Create viewholder
     @NonNull

@@ -17,6 +17,7 @@ import com.example.myapplication01.MainActivity;
 import com.example.myapplication01.Plclist_activity.Devicelist_Activity_main;
 import com.example.myapplication01.R;
 import com.example.myapplication01.Signup_activity.Signup_mainactivity;
+import com.example.myapplication01.TrymainActivity2;
 
 public class Login_Mainactivity extends AppCompatActivity {
 
@@ -64,7 +65,7 @@ public class Login_Mainactivity extends AppCompatActivity {
         rxbtncom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Login_Mainactivity.this, MainActivity.class);
+                Intent intent = new Intent(Login_Mainactivity.this, TrymainActivity2.class);
                 startActivity(intent);
             }
         });

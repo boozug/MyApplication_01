@@ -100,54 +100,54 @@
 //
 //    //region---------------------Open communication----------------------------------------------
 //    //region---------------------Old program-----------------------------------------------------
-////    public void execOpen(int seqno) {
-////
-////        //[check command exetcute state ]
-////        if(commandexecute)return;
-////
-////        //[set command exetcute state]
-////        commandexecute=true;
-////
-////        final int seq=seqno;
-////
-////        //[Call MX "Open" by Background Thread]
-////        new AsyncTask<Void, Void, Integer>() {
-////
-////            //[Set Process Start Time]
-////            long start = System.currentTimeMillis();
-////
-////            @Override
-////            protected Integer doInBackground(Void... arg0) {
-////
-////                //[call "Open" API]
-////                return  mxcomm.open(mxopen, password);
-////            }
-////            @Override
-////            protected void onPostExecute(Integer result){
-////
-////                //[Check Pointer(not nul)]
-////                if (null != callback) {
-////
-////                    //[set DetailResultString Host/port String]
-////                    detailstring=getOpenString();
-////
-////
-////                    //[Set Process Duration]
-////                    long interval = System.currentTimeMillis()-start;
-////
-////                    //[Call result callback]
-////                    callback.resultMXComponent(seq,(int)result,interval,detailstring);
-////
-////                }
-////                //[set command exetcute state]
-////                commandexecute=false;
-////
-////                return ;
-////
-////            }
-////        }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-////
-////    }
+//    public void execOpen(int seqno) {
+//
+//        //[check command exetcute state ]
+//        if(commandexecute)return;
+//
+//        //[set command exetcute state]
+//        commandexecute=true;
+//
+//        final int seq=seqno;
+//
+//        //[Call MX "Open" by Background Thread]
+//        new AsyncTask<Void, Void, Integer>() {
+//
+//            //[Set Process Start Time]
+//            long start = System.currentTimeMillis();
+//
+//            @Override
+//            protected Integer doInBackground(Void... arg0) {
+//
+//                //[call "Open" API]
+//                return  mxcomm.open(mxopen, password);
+//            }
+//            @Override
+//            protected void onPostExecute(Integer result){
+//
+//                //[Check Pointer(not nul)]
+//                if (null != callback) {
+//
+//                    //[set DetailResultString Host/port String]
+//                    detailstring=getOpenString();
+//
+//
+//                    //[Set Process Duration]
+//                    long interval = System.currentTimeMillis()-start;
+//
+//                    //[Call result callback]
+//                    callback.resultMXComponent(seq,(int)result,interval,detailstring);
+//
+//                }
+//                //[set command exetcute state]
+//                commandexecute=false;
+//
+//                return ;
+//
+//            }
+//        }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+//
+//    }
 //    //    endregion
 //    //    region--------------------------------new program---------------------------------------
 ////    private Observable<Integer> source = AsyncObservable.start(callable);
