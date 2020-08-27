@@ -1,7 +1,7 @@
-package com.example.myapplication01.Devices_interface_activity.fragments;
+package com.example.myapplication01.Devices_interface_activity.fragments.Apis;
 import jp.co.melco.mxcomponent.MELMxCommunication;
 import jp.co.melco.mxcomponent.MELMxOpenSettings;
-public class MX_Component_forModalVIew {
+public class MX_Component_API {
 //    --------------------------Diagnostic
     private static MELMxCommunication mx_comm = new MELMxCommunication();
     private static MELMxOpenSettings mx_open = new MELMxOpenSettings();

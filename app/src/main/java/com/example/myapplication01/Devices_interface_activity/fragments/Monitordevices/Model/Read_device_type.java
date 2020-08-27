@@ -35,4 +35,6 @@ public class Read_device_type {
 
     public void setValue(Integer value) {this.value = value;}
 
+
+
 }

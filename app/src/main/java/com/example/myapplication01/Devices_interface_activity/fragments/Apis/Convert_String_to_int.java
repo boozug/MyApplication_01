@@ -1,5 +1,6 @@
-package com.example.myapplication01.Devices_interface_activity.Commonlib;
-
+package com.example.myapplication01.Devices_interface_activity.fragments.Apis;
+import jp.co.melco.mxcomponent.MELMxCommunication;
+import jp.co.melco.mxcomponent.MELMxOpenSettings;
 public class Convert_String_to_int {
     public static int CPU_type(String CPU_text) {
         int CPU_type = 0;

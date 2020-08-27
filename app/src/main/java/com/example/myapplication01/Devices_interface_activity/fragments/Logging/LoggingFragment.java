@@ -12,7 +12,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
-import com.example.myapplication01.Devices_interface_activity.Commonlib.Convert_String_to_int;
+import com.example.myapplication01.Devices_interface_activity.fragments.Apis.Convert_String_to_int;
 import com.example.myapplication01.R;
 
 import android.widget.TextView;

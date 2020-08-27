@@ -212,7 +212,7 @@ public class Addevice_DBUserAdapter
      }
 //     endregion
     //     region ---------------------read data cursor
-    public static List<String> read_data_cursor_to_list(Context context,int position){
+    public static List<String> read_data_cursor_to_list(int position){
         List<String> Pac_attribute = new ArrayList<>();
         String select_query = "SELECT * FROM device_table WHERE _id = "+ (position+1) +" ;";
         try{
@@ -226,7 +226,8 @@ public class Addevice_DBUserAdapter
         return Pac_attribute;
         }
         catch (SQLiteException e){
-            Toast.makeText(context,e.getMessage(),Toast.LENGTH_SHORT).show();
+//            Toast.makeText(context,e.getMessage(),Toast.LENGTH_SHORT).show();
+            Log.e("TAG",e.getMessage());
         }
         DBHelper.close();
         return Pac_attribute;
