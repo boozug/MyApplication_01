@@ -1,4 +1,5 @@
 package com.example.myapplication01.Devices_interface_activity.fragments.Apis;
+
 import jp.co.melco.mxcomponent.MELMxCommunication;
 import jp.co.melco.mxcomponent.MELMxOpenSettings;
 public class MX_Component_API {
@@ -6,15 +7,24 @@ public class MX_Component_API {
     private static MELMxCommunication mx_comm = new MELMxCommunication();
     private static MELMxOpenSettings mx_open = new MELMxOpenSettings();
 
-    public static int connect_result (String host_address, Integer destination_port_number, Integer unit_type, Integer cpu_type, Integer io_number, Integer protocol_type, String password){
-        mx_open.hostAddress = host_address;
-        mx_open.destinationPortNumber = destination_port_number;
-        mx_open.unitType = unit_type;
-        mx_open.cpuType =cpu_type;
-        mx_open.ioNumber = io_number;
-        mx_open.protocolType = protocol_type;
+    /**
+     * Connect function
+     * @param password passsword of the connect function
+     * @param pos position of the Database which is opened
+     * @return connect returned
+     */
+    public static int connect_result(String password, int pos){
+        mx_open = Read_information_fromDB.mx_open(pos);
         return mx_comm.open(mx_open,password);
     }
+
+    /**
+     *
+     * @param Offset Start address of read values
+     * @param number_of_devices number of values
+     * @param write_data data written to
+     * @return String returned
+     */
     public static String read_devices_res(String Offset,int number_of_devices,int[] write_data){
         int read_device = mx_comm.readDeviceBlock(Offset,number_of_devices,write_data);
         if (read_device == 0){
@@ -26,6 +36,13 @@ public class MX_Component_API {
         }
     }
 
+    /**
+     *
+     * @param Offset Start address of read values
+     * @param number_of_devices number of values
+     * @param read_data data read to
+     * @return String returned
+     */
     public static String write_devices_res(String Offset, int number_of_devices,int[] read_data){
         int write_deivice = mx_comm.writeDeviceBlock(Offset,number_of_devices,read_data);
         if (write_deivice == 0){
@@ -36,7 +53,16 @@ public class MX_Component_API {
             return String.valueOf(write_deivice);
         }
     }
+
+    /**
+     *
+     * @param mx_open
+     * @param mx_comm
+     * @param password
+     * @return
+     */
     public static int result(MELMxOpenSettings mx_open, MELMxCommunication mx_comm, String password) {return mx_comm.open(mx_open,password);}
+
     public static String result_string(int result_int) throws Exception {
         String result_string = "";
         switch (result_int){

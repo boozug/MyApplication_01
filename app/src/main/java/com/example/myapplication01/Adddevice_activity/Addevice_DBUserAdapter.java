@@ -11,6 +11,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
 import com.example.myapplication01.Plclist_activity.Replace_device_temp_UDT_activity_devices;
 
 import java.util.ArrayList;
@@ -212,6 +214,7 @@ public class Addevice_DBUserAdapter
      }
 //     endregion
     //     region ---------------------read data cursor
+    @NonNull
     public static List<String> read_data_cursor_to_list(int position){
         List<String> Pac_attribute = new ArrayList<>();
         String select_query = "SELECT * FROM device_table WHERE _id = "+ (position+1) +" ;";
