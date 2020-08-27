@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.Read_devicesFragment">
+    tools:context="com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.VIew.Read_devicesFragment">
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

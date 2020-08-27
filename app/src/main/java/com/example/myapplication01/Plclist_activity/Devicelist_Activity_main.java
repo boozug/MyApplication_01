@@ -25,6 +25,7 @@ public class Devicelist_Activity_main extends AppCompatActivity {
     ArrayList<Addevice_UDT_activity> addeviceUDTactivityArrayList = new ArrayList<>();
     FloatingActionButton actionButton;
     ArrayList<Replace_device_temp_UDT_activity_devices> array_buffer_before_del = new ArrayList<>();
+    // position ported to next fragment.
     public static int Count_save;
 
     @Override

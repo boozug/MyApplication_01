@@ -12,6 +12,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 
 import com.example.myapplication01.Plclist_activity.Replace_device_temp_UDT_activity_devices;
 
@@ -213,9 +214,24 @@ public class Addevice_DBUserAdapter
          return arrayList;
      }
 //     endregion
+
+    //Query information from selected position: table: device_table
+    public static List<String> read_information_from_position_in_database(int pos){
+        List<String> read_device_type = new ArrayList<>();
+        int pos_plus = pos + 1;
+        String select_query = "SELECT *FROM device_table WHERE _id = "+ pos_plus +" ;";
+        SQLiteDatabase db = DBHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(select_query,null);
+        cursor.moveToFirst();
+        for (int i = 0; i<=8; i++)
+        {read_device_type.add(cursor.getString(i));}
+        return read_device_type;
+    }
+
+
     //     region ---------------------read data cursor
     @NonNull
-    public static List<String> read_data_cursor_to_list(int position){
+    public static List<String> read_data_cursor_to_list(FragmentActivity activity, int position){
         List<String> Pac_attribute = new ArrayList<>();
         String select_query = "SELECT * FROM device_table WHERE _id = "+ (position+1) +" ;";
         try{

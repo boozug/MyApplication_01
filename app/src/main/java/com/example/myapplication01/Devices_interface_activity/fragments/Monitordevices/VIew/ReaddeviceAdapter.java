@@ -1,4 +1,4 @@
-package com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices;
+package com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.VIew;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.ModalView.ModalView;
 import com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.Model.Read_device_type;
 import com.example.myapplication01.R;
 
@@ -22,8 +23,7 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
     }
 
     public static ArrayList<Read_device_type> get_all_devices() {
-        ArrayList<Read_device_type> value_read = null;
-
+        ArrayList<Read_device_type> value_read = ModalView.get_read_device_list();
         return value_read;
     }
 
@@ -41,7 +41,6 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
     // Bind viewholder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Read_device_type readdevice = read_device_typeList.get(position);
         holder.id.setText(Read_device_type.getId());
         holder.devicename.setText(Read_device_type.getDevice_name());
         holder.inputtype.setText(Read_device_type.getInput_type());

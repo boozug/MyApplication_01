@@ -1,4 +1,4 @@
-package com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices;
+package com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.VIew;
 
 
 import android.os.Bundle;
@@ -22,7 +22,7 @@ public class Read_devicesFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        RecyclerView recyclerView = null;
+        RecyclerView recyclerView;
         ReaddeviceAdapter readdeviceAdapter;
         ArrayList<Read_device_type> read_device_ArrayList = new ArrayList<>();
         // Inflate the layout for this fragment
@@ -31,7 +31,7 @@ public class Read_devicesFragment extends Fragment {
 //        region----------------------------------code start here
         read_device_ArrayList = ReaddeviceAdapter.get_all_devices();
         readdeviceAdapter = new ReaddeviceAdapter(read_device_ArrayList);
-        recyclerView = recyclerView.findViewById(R.id.recycler_view_read_device);
+        recyclerView = v.findViewById(R.id.recycler_view_read_device);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(readdeviceAdapter);

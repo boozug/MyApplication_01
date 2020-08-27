@@ -15,7 +15,12 @@ public class Read_device_type {
         this.value = value;
     }
 
-    public static Integer getId() {return id;}
+    public Read_device_type() {
+
+    }
+
+
+    public static String getId() {return String.valueOf(id);}
 
     public void setId(Integer id) {this.id = id;}
 
@@ -31,7 +36,7 @@ public class Read_device_type {
 
     public void setAddress(String address) {this.address = address;}
 
-    public static Integer getValue() {return value;}
+    public static String getValue() {return String.valueOf(value);}
 
     public void setValue(Integer value) {this.value = value;}
 
