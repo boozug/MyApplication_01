@@ -1,7 +1,5 @@
 package com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices;
 
-import android.content.Context;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.Model.Read_device_type;
 import com.example.myapplication01.R;
 
 import java.util.ArrayList;
@@ -20,6 +19,12 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
     // return adapter to recyclerview
     public ReaddeviceAdapter(List<Read_device_type> readDeviceTypeList){
         this.read_device_typeList = readDeviceTypeList;
+    }
+
+    public static ArrayList<Read_device_type> get_all_devices() {
+        ArrayList<Read_device_type> value_read = null;
+
+        return value_read;
     }
 
 //    public static ArrayList<Read_device_type> get_all_devices() {

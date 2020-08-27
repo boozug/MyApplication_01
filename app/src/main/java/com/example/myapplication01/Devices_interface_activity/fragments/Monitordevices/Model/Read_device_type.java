@@ -1,4 +1,4 @@
-package com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices;
+package com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.Model;
 
 public class Read_device_type {
     private static Integer id;
