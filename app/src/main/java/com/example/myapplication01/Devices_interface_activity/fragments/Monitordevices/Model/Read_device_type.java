@@ -28,10 +28,6 @@ public class Read_device_type {
 
     public void setDevice_name(String device_name) {this.device_name = device_name;}
 
-    public static String getInput_type() {return input_type;}
-
-    public void setInput_type(String input_type) {this.input_type = input_type;}
-
     public static String getAddress() {return address;}
 
     public void setAddress(String address) {this.address = address;}

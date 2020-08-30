@@ -32,12 +32,6 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/inputtype_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"/>
-
 
             <TextView
                 android:id="@+id/address_textView"

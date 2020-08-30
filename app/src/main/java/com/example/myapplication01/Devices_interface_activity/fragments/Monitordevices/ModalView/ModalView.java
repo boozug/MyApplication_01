@@ -8,6 +8,7 @@ import com.example.myapplication01.Plclist_activity.Devicelist_Activity_main;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import jp.co.melco.mxcomponent.MELMxOpenSettings;
 import static com.example.myapplication01.Devices_interface_activity.fragments.Apis.MX_Component_API.connect_result;
@@ -37,14 +38,24 @@ public class ModalView {
         // Add values followed by the number of value read
         int[] read_array_960_D_devices_tmp;
         read_array_960_D_devices_tmp =  read_array_960_D_devices();
-        for (int i = 1; i < 960; i++) {
-            Read_device_type read_device_list = new Read_device_type();
-            read_device_list.setId(i);
-            read_device_list.setDevice_name("D");
-            read_device_list.setAddress("D" + i);
-            read_device_list.setValue(read_array_960_D_devices_tmp[i]);
-            read_device_array_list.add(read_device_list);
-        }
+//        for (int i = 0; i<= 3; i++){
+            for (int j = 0; j < 3; j++) {
+                Read_device_type read_device_list = new Read_device_type();
+                read_device_list.setId(j);
+                read_device_list.setDevice_name("D");
+                read_device_list.setAddress("D" + j);
+                read_device_list.setValue(read_array_960_D_devices_tmp[j]);
+                read_device_array_list.add(read_device_list);
+            }
+
+            for (Read_device_type r: read_device_array_list){
+                Log.d(TAG,"----------------------"+ r.getId());
+                Log.d(TAG,r.getDevice_name()+" "+r.getAddress()+" "+r.getValue());
+            }
+//            }
+//            read_device_array_list.add(read_device_list);
+
+//        }
         return read_device_array_list;
     }
 }

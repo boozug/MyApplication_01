@@ -43,7 +43,6 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.id.setText(Read_device_type.getId());
         holder.devicename.setText(Read_device_type.getDevice_name());
-        holder.inputtype.setText(Read_device_type.getInput_type());
         holder.address.setText(Read_device_type.getAddress());
         holder.value.setText(Read_device_type.getValue());
     }
@@ -55,13 +54,12 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView id,devicename,inputtype,address,value;
+        TextView id,devicename,address,value;
 
         public ViewHolder(View view) {
             super(view);
             id = view.findViewById(R.id.id_textView);
             devicename = view.findViewById(R.id.devicename_textView);
-            inputtype = view.findViewById(R.id.inputtype_textView);
             address = view.findViewById(R.id.address_textView);
             value = view.findViewById(R.id.value_textView);
         }
