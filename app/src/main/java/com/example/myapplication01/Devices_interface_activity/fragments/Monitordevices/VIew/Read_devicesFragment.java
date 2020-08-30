@@ -24,16 +24,18 @@ public class Read_devicesFragment extends Fragment {
     ) {
         RecyclerView recyclerView;
         ReaddeviceAdapter readdeviceAdapter;
-        ArrayList<Read_device_type> read_device_ArrayList = new ArrayList<>();
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_read_device, container, false);
 
 //        region----------------------------------code start here
-        read_device_ArrayList = ReaddeviceAdapter.get_all_devices();
-        readdeviceAdapter = new ReaddeviceAdapter(read_device_ArrayList);
         recyclerView = v.findViewById(R.id.recycler_view_read_device);
+
+        // use linear layout manager
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(layoutManager);
+
+        ArrayList<Read_device_type> read_device_ArrayList = ReaddeviceAdapter.get_all_devices();
+        readdeviceAdapter = new ReaddeviceAdapter(read_device_ArrayList);
         recyclerView.setAdapter(readdeviceAdapter);
         //        endregion
         return v;

@@ -18,6 +18,20 @@ import java.util.List;
 public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.ViewHolder>{
     List<Read_device_type> read_device_typeList;
     // return adapter to recyclerview
+
+    // Provide a reference to the views for each data item
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView id, device_name,address,value;
+
+        public ViewHolder(View view) {
+            super(view);
+            id = view.findViewById(R.id.id_textView);
+            device_name = view.findViewById(R.id.devicename_textView);
+            address = view.findViewById(R.id.address_textView);
+            value = view.findViewById(R.id.value_textView);
+        }
+    }
+    // Provide a suitable constructor (depends on the kind of data set)
     public ReaddeviceAdapter(List<Read_device_type> readDeviceTypeList){
         this.read_device_typeList = readDeviceTypeList;
     }
@@ -27,41 +41,24 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
         return value_read;
     }
 
-//    public static ArrayList<Read_device_type> get_all_devices() {
-//
-//    }
-
-    // Create viewholder
+    // Create new views (invoked by the layout manager)
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_read_devices_flateditems,parent,false);
         return new ViewHolder(view);
     }
-    // Bind viewholder
+    // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
         holder.id.setText(Read_device_type.getId());
-        holder.devicename.setText(Read_device_type.getDevice_name());
+        holder.device_name.setText(Read_device_type.getDevice_name());
         holder.address.setText(Read_device_type.getAddress());
         holder.value.setText(Read_device_type.getValue());
     }
-
-
+    // Return the size of your data set (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return read_device_typeList.size();
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView id,devicename,address,value;
-
-        public ViewHolder(View view) {
-            super(view);
-            id = view.findViewById(R.id.id_textView);
-            devicename = view.findViewById(R.id.devicename_textView);
-            address = view.findViewById(R.id.address_textView);
-            value = view.findViewById(R.id.value_textView);
-        }
     }
 }
