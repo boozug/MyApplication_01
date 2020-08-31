@@ -34,37 +34,21 @@ public class ModalView {
     }
 
     public static ArrayList<Read_device_type> get_read_device_list() {
-        ArrayList<Read_device_type> read_device_array_list = new ArrayList<Read_device_type>();
+        ArrayList<Read_device_type> read_device_array_list = new ArrayList<>();
         ArrayList<String> tmp = new ArrayList<String>();
-        // Add values followed by the number of value read
         int[] read_array_960_D_devices_tmp;
+        // Add values followed by the number of value read
         read_array_960_D_devices_tmp =  read_array_960_D_devices();
-//        for (int i = 0; i<= 3; i++){
-//            for (int j = 0; j < 3; j++) {
-        Read_device_type read_device_list = new Read_device_type();
-        read_device_list.setId(0);
-        read_device_list.setDevice_name("D");
-        read_device_list.setAddress("D0");
-        read_device_list.setValue(read_array_960_D_devices_tmp[0]);
-        read_device_array_list.add(read_device_list);
-        Read_device_type read_device_list1 = new Read_device_type();
-        read_device_list1.setId(1);
-        read_device_list1.setDevice_name("D");
-        read_device_list1.setAddress("D1");
-        read_device_list1.setValue(read_array_960_D_devices_tmp[1]);
-        read_device_array_list.add(read_device_list1);
-
-
-
-//            }
-            //Test1
-        for (int j=0; j<=3 ;j++){
-            Log.d(TAG,"----------------------"+ read_device_array_list.get(j).getID_int());
-            Log.d(TAG,read_device_array_list.get(j).getDevice_name()+" "+read_device_array_list.get(j).getAddress()+" "+read_device_array_list.get(j).getValue());
+        for (int j = 0; j < 960; j++) {
+            Read_device_type read_device_list = new Read_device_type();
+            read_device_list.setId(j);
+            read_device_list.setDevice_name("D");
+            read_device_list.setAddress("D"+j);
+            read_device_list.setValue(read_array_960_D_devices_tmp[j]);
+            read_device_array_list.add(read_device_list);
         }
-
-//            read_device_array_list.add(read_device_list);
-//        }
         return read_device_array_list;
     }
+
+
 }

@@ -51,30 +51,49 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/cardview_light_background" />
             </androidx.appcompat.widget.LinearLayoutCompat>
-
             <TextView
-                android:id="@+id/read_connection_status"
+                android:id="@+id/read_connection_setup_time_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/buton_monitoring"
                 android:background="@color/duration"
+                android:text="Connection setup time"
+                android:textColor="@color/cardview_light_background" />
+            <TextView
+                android:id="@+id/read_connection_status_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/read_connection_setup_time_textview"
+                android:background="@color/duration"
                 android:text="Connection_status"
-                android:textColor="@color/cardview_dark_background" />
+                android:textColor="@color/cardview_light_background" />
+            <TextView
+                android:id="@+id/reading_duration_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/read_connection_status_textview"
+                android:background="@color/duration"
+                android:text="Reading_duration"
+                android:textColor="@color/cardview_light_background" />
 
             <SearchView
                 android:id="@+id/read_device_search"
-                style="@android:style/Widget.Material.SearchView"
+                style="@android:style/Widget.Material.SeekBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/read_connection_status"
+                android:layout_below="@+id/reading_duration_textview"
                 android:layout_marginTop="-2dp"
-                android:scrollbarStyle="outsideOverlay" />
+                android:background="@color/airline_name"
+                android:inputType="number"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbarTrackHorizontal="@color/blue_100" />
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_read_device"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recycler_view_read_device"
-        android:layout_below="@+id/read_device_toolbar"/>
+        android:layout_below="@+id/read_device_toolbar"
+        android:theme="@style/AppTheme.PopupOverlay" />
 </RelativeLayout>

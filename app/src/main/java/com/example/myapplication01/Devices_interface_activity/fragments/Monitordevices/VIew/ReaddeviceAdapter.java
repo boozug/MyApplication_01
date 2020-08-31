@@ -51,10 +51,11 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.id.setText(Read_device_type.getId());
-        holder.device_name.setText(Read_device_type.getDevice_name());
-        holder.address.setText(Read_device_type.getAddress());
-        holder.value.setText(Read_device_type.getValue());
+        Read_device_type read_device_type_tmp = read_device_typeList.get(position);
+        holder.id.setText(String.valueOf(read_device_type_tmp.getId()));
+        holder.device_name.setText(read_device_type_tmp.getDevice_name());
+        holder.address.setText(read_device_type_tmp.getAddress());
+        holder.value.setText(String.valueOf(read_device_type_tmp.getValue()));
     }
     // Return the size of your data set (invoked by the layout manager)
     @Override
