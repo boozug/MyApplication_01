@@ -36,10 +36,6 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
         this.read_device_typeList = readDeviceTypeList;
     }
 
-    public static ArrayList<Read_device_type> get_all_devices() {
-        ArrayList<Read_device_type> value_read = ModalView.get_read_device_list();
-        return value_read;
-    }
 
     // Create new views (invoked by the layout manager)
     @NonNull

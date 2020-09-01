@@ -60,15 +60,9 @@ public class MX_Component_API {
      * @return String returned
      */
     @NotNull
-    public static String read_devices_res(String Offset, int number_of_devices, int[] write_data){
+    public static int read_devices_res(String Offset, int number_of_devices, int[] write_data){
         int read_device = mx_comm.readDeviceBlock(Offset,number_of_devices,write_data);
-        if (read_device == 0){
-            return "OK";
-        }
-        else
-        {
-            return String.valueOf(read_device);
-        }
+        return read_device;
     }
 
     /**

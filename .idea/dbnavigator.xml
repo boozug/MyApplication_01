@@ -23,7 +23,11 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="1b69890e-af06-4a96-9df3-25b32ededf58">
+        <schema name="main" object-types="dataset trigger, view, constraint, table, index, column" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1b69890e-af06-4a96-9df3-25b32ededf58">
@@ -46,6 +50,7 @@
         <condition column="_id" operator="&lt;" value="10" active="true" />
       </filter>
     </filter-actions>
+    <filter-actions connection-id="1b69890e-af06-4a96-9df3-25b32ededf58" dataset="main.sqlite_sequence" active-filter-id="" />
     <filter-actions connection-id="1b69890e-af06-4a96-9df3-25b32ededf58" dataset="main.device_table" active-filter-id="7b0f4e9c-7ee6-441a-8129-2fecb8b93f79">
       <filter id="7b0f4e9c-7ee6-441a-8129-2fecb8b93f79" name="10" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="_id" operator="&lt;" value="10" active="true" />
@@ -90,7 +95,7 @@
           <port value="1234" />
           <database value="database" />
           <files>
-            <file path="F:\MitsubishiVietnam\MyApplication_01\usersdb" schema="main" />
+            <file path="D:\Android\MEVN_proj\MyApplication_01\usersdb" schema="main" />
           </files>
           <type value="NONE" />
           <user value="" />
