@@ -8,7 +8,9 @@ import com.example.myapplication01.Plclist_activity.Devicelist_Activity_main;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import jp.co.melco.mxcomponent.MELMxOpenSettings;
 import static com.example.myapplication01.Devices_interface_activity.fragments.Apis.MX_Component_API.connect_result;
@@ -31,14 +33,13 @@ public class ModalView {
         }
         else{
             Final_res = connect_res;
+            Arrays.fill(read_array_960_D_devices,0);
         }
         return Final_res;
     }
 
     public static ArrayList<Read_device_type> get_read_device_list(int[] read_array_960_D_devices) {
         ArrayList<Read_device_type> read_device_array_list = new ArrayList<>();
-        ArrayList<String> tmp = new ArrayList<String>();
-        int[] read_array_960_D_devices_tmp;
         // Add values followed by the number of value read
         for (int j = 0; j < 960; j++) {
             Read_device_type read_device_list = new Read_device_type();
@@ -55,9 +56,7 @@ public class ModalView {
     public static Integer Read_deivce_adapter_to_Observable(){
         int final_res;
         final_res = Connect_res();
-        if (final_res == 0x00|| final_res == 0xF0000003){
-            read_device_types_array_list_final = get_read_device_list(read_array_960_D_devices);
-        }
+        read_device_types_array_list_final = get_read_device_list(read_array_960_D_devices);
         return final_res;
     }
 }

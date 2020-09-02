@@ -49,7 +49,7 @@ ECHO Automatic config IP Address and Subnet Mask For Static
 ipconfig /renew
 
 ECHO Here are the new settings for %computername%:
-netsh interface ip set address "Ethernet" static 192.168.3.100 255.255.255.0 192.168.3.1 1
+netsh interface ip set address "Ethernet" static 192.168.3.100 255.255.255.0 192.168.3.254 1
 netsh int ip show config
 
 pause
