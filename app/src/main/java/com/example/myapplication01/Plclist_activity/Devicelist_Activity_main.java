@@ -80,7 +80,6 @@ public class Devicelist_Activity_main extends AppCompatActivity {
             public void onClick(View v) {
                 show_insertactivity();
             }
-
             private void show_insertactivity() {
                 Intent intent = new Intent(Devicelist_Activity_main.this, Adddevice_activity_1.class);
                 startActivity(intent);

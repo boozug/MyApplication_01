@@ -20,7 +20,7 @@ public class ModalView {
     private static final String TAG = "Modal View Fragment";
     public static ArrayList<Read_device_type> read_device_types_array_list_final;
     public static int[] read_array_960_D_devices = new int[960];
-
+    public static long start;
     private static int Connect_res(){
         // Check connection
         int Final_res = 0;
@@ -54,6 +54,7 @@ public class ModalView {
 
     //-----------------------------------------------------
     public static Integer Read_deivce_adapter_to_Observable(){
+        start = System.currentTimeMillis();
         int final_res;
         final_res = Connect_res();
         read_device_types_array_list_final = get_read_device_list(read_array_960_D_devices);

@@ -30,21 +30,39 @@
             <TextView
                 android:id="@+id/devicename_textView"
                 android:layout_width="50dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textSize="20sp" />
 
 
             <TextView
                 android:id="@+id/address_textView"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/value_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="end"/>
+                android:textSize="20sp"/>
+
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/value_textView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/linear_layout"/>
+            android:layout_below="@+id/linear_layout"
+            android:background="@color/ic_launcher_background">
+
+            <ImageButton
+                android:id="@+id/button_notification1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear_layout"
+                android:contentDescription="notification"
+                android:src="@drawable/ic_baseline_add_alert_24"
+                />
+        </LinearLayout>
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
