@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:focusable="true"
@@ -21,7 +22,7 @@
 
         <LinearLayout
             android:id="@+id/linear_layout"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/id_textView"
@@ -29,21 +30,24 @@
 
             <TextView
                 android:id="@+id/devicename_textView"
-                android:layout_width="50dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rectabgle_with_stroke"
                 android:textSize="20sp" />
 
 
             <TextView
                 android:id="@+id/address_textView"
-                android:layout_width="50dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rectabgle_with_stroke"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/value_textView"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rectabgle_with_stroke"
                 android:textSize="20sp"/>
 
         </LinearLayout>
@@ -51,18 +55,59 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/linear_layout_for_btn"
             android:layout_below="@+id/linear_layout"
-            android:background="@color/ic_launcher_background">
+            android:background="@drawable/rectabgle_with_stroke">
 
-            <ImageButton
+            <Button
                 android:id="@+id/button_notification1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/linear_layout"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:height="15dp"
+                android:background="@animator/bg_button"
                 android:contentDescription="notification"
-                android:src="@drawable/ic_baseline_add_alert_24"
-                />
-        </LinearLayout>
+                android:foreground="@drawable/ic_baseline_add_alert_24" />
 
+            <Button
+                android:id="@+id/button_notification_enable"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:height="15dp"
+                android:background="@animator/bg_button"
+                android:contentDescription="notification"
+                android:foreground="@drawable/ic_stat_name"
+                android:layout_marginBottom="5dp"/>
+
+            <Button
+                android:id="@+id/button_notification_sync"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:height="15dp"
+                android:background="@animator/bg_button"
+                android:contentDescription="sync"
+                android:foreground="@android:drawable/ic_popup_sync"
+                android:layout_marginBottom="5dp"/>
+<!--            <Button-->
+<!--                android:id="@+id/button_notification_sync"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:height="15dp"-->
+<!--                android:background="@animator/bg_button"-->
+<!--                android:foreground="@android:drawable/ic_popup_sync"-->
+<!--                android:layout_marginBottom="5dp"/>-->
+        </LinearLayout>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
