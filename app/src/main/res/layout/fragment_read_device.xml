@@ -11,7 +11,8 @@
             android:id="@+id/relative_layout_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="0dp">
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp">
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/buton_monitoring"
@@ -22,22 +23,21 @@
                 <Switch
                     android:id="@+id/read_continous_value"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:text="monitoring mode"
                     android:textColor="@color/cardview_dark_background"
-                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+                    tools:ignore="UseSwitchCompatOrMaterialXml"/>
 
                 <Button
                     android:id="@+id/read_value_button"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@color/airline_name"
-                    android:drawableRight="@drawable/ic_baseline_play_arrow_24"
+                    android:layout_height="60dp"
                     android:focusable="auto"
                     android:focusableInTouchMode="true"
                     android:text="Read value"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:background="@drawable/shape_button_values"/>
                     android:textColor="@color/cardview_light_background" />
             </androidx.appcompat.widget.LinearLayoutCompat>
             <TextView
@@ -45,34 +45,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/buton_monitoring"
-                android:background="@color/duration"
+                android:background="@drawable/rectabgle_with_stroke"
                 android:text="Connection setup time"
-                android:textColor="@color/cardview_light_background" />
+                android:textColor="@color/cardview_dark_background" />
             <TextView
                 android:id="@+id/read_connection_status_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/read_connection_setup_time_textview"
-                android:background="@color/duration"
+                android:background="@drawable/rectabgle_with_stroke"
                 android:text="Connection_status"
-                android:textColor="@color/cardview_light_background" />
+                android:textColor="@color/cardview_dark_background" />
             <TextView
                 android:id="@+id/reading_duration_textview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/read_connection_status_textview"
-                android:background="@color/duration"
+                android:background="@drawable/rectabgle_with_stroke"
                 android:text="Reading_duration"
-                android:textColor="@color/cardview_light_background" />
+                android:textColor="@color/cardview_dark_background" />
 
             <SearchView
                 android:id="@+id/read_device_search"
-                style="@android:style/Widget.Material.SeekBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/reading_duration_textview"
                 android:layout_marginTop="-2dp"
-                android:background="@color/airline_name"
+                android:background="@drawable/rectabgle_with_stroke"
                 android:inputType="number"
                 android:scrollbarStyle="outsideOverlay"
                 android:scrollbarTrackHorizontal="@color/blue_100" />

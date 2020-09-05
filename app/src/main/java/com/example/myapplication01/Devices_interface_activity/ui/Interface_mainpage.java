@@ -12,7 +12,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 public class Interface_mainpage extends AppCompatActivity {
 
-    private String[] title = new String[]{" WRITE DEVICES "," MONITOR DEVICES "," LOG "};
+    private String[] title = new String[]{" WRITE DEVICES "," MONITOR DEVICES "," NOTIFY "," LOG "};
     TabLayout tabLayout;
     ViewPager2 viewPager;
     @Override

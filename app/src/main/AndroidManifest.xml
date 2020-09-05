@@ -11,8 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity$Connect_activity"></activity>
-        <activity android:name=".TrymainActivity2" />
         <activity android:name=".Devices_interface_activity.ui.Interface_mainpage" />
         <activity android:name=".Plclist_activity.Devicelist_Activity_main" />
         <activity android:name=".Plclist_activity.Devicelist_listgroupactivity" />

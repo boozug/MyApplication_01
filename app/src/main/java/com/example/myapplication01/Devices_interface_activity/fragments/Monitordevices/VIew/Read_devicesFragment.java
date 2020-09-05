@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.SearchView;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -48,6 +50,8 @@ public class Read_devicesFragment extends Fragment {
     TextView Connection_setup_time;
     TextView Connection_status;
     TextView Reading_duration;
+    SearchView searchView;
+    boolean res;
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -63,14 +67,15 @@ public class Read_devicesFragment extends Fragment {
         Connection_setup_time = v.findViewById(R.id.read_connection_setup_time_textview);
         Connection_status = v.findViewById(R.id.read_connection_status_textview);
         Reading_duration = v.findViewById(R.id.reading_duration_textview);
+        searchView = v.findViewById(R.id.read_device_search);
         // use linear layout manager
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
-        Read_value_btn.setOnClickListener(view -> create_Observable_Observer_read_value(recyclerView));
+        Read_value_btn.setOnClickListener(view -> create_Observable_Observer_read_value(recyclerView,searchView.getQuery().toString()));
         Monitoring_enable_switch.setOnCheckedChangeListener((compoundButton, b) -> {
             if (b){
                 Read_value_btn.setVisibility(View.GONE);
-                create_Observable_Observer_monitoring_value(recyclerView);
+                create_Observable_Observer_monitoring_value(recyclerView,searchView.getQuery().toString());
             }
             else
             {
@@ -81,7 +86,8 @@ public class Read_devicesFragment extends Fragment {
     }
 
 
-    private void create_Observable_Observer_monitoring_value(RecyclerView recyclerView) {
+
+    private void create_Observable_Observer_monitoring_value(RecyclerView recyclerView, String s) {
         @NonNull
         Observable<Integer> Result_value_monitoring_observable = Observable.fromCallable(ModalView::Read_deivce_adapter_to_Observable);
         Result_value_monitoring_observable
@@ -101,6 +107,7 @@ public class Read_devicesFragment extends Fragment {
                             disposable.dispose();
                         }
                         display_status(integer,ModalView.start);
+                        Data_filter(s);
                         set_adapter(recyclerView,read_device_types_array_list_final);
                     }
 
@@ -115,8 +122,22 @@ public class Read_devicesFragment extends Fragment {
                 });
     }
 
+    private void Data_filter(String s) {
+        if(s!= "")
+        {
+            ArrayList<Read_device_type> read_device_types_tmp = new ArrayList<>();
+            for (Read_device_type r:read_device_types_array_list_final){
+                if (String.valueOf(r.getId()).contains(s)||(r.getAddress().contains(s)||r.getDevice_name().contains(s)))
+                {
+                    read_device_types_tmp.add(r);
+                }
+                read_device_types_array_list_final = read_device_types_tmp;
+            }
+        }
+    }
 
-    private void create_Observable_Observer_read_value(RecyclerView recyclerView) {
+
+    private void create_Observable_Observer_read_value(RecyclerView recyclerView, String s) {
         long start = System.currentTimeMillis();
         @NonNull
         Observable<Integer> Result_value_observable = Observable.fromCallable(ModalView::Read_deivce_adapter_to_Observable);
@@ -140,11 +161,11 @@ public class Read_devicesFragment extends Fragment {
 
                     @Override
                     public void onComplete() {
+                        Data_filter(s);
                         set_adapter(recyclerView,read_device_types_array_list_final);
                     }
                 });
     }
-
 
 
     private void display_status(Integer integer, long start) {
