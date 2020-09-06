@@ -59,55 +59,87 @@
             android:layout_below="@+id/linear_layout"
             android:background="@drawable/rectabgle_with_stroke">
 
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
             <Button
                 android:id="@+id/button_notification1"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
                 android:height="15dp"
                 android:background="@animator/bg_button"
                 android:contentDescription="notification"
                 android:foreground="@drawable/ic_baseline_add_alert_24" />
-
-            <Button
-                android:id="@+id/button_notification_enable"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
-                android:height="15dp"
-                android:background="@animator/bg_button"
-                android:contentDescription="notification"
-                android:foreground="@drawable/ic_stat_name"
-                android:layout_marginBottom="5dp"/>
+                android:layout_marginBottom="5dp">
 
+                <Button
+                    android:id="@+id/button_notification_enable"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:height="15dp"
+                    android:background="@animator/bg_button"
+                    android:contentDescription="notification"
+                    android:foreground="@drawable/ic_stat_name"/>
+
+                <TextView
+                    android:id="@+id/cart_badge_notify"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:background="@drawable/badge_background"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="0"
+                    android:translationZ="2dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
             <Button
                 android:id="@+id/button_notification_sync"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
                 android:height="15dp"
                 android:background="@animator/bg_button"
                 android:contentDescription="sync"
-                android:foreground="@android:drawable/ic_popup_sync"
-                android:layout_marginBottom="5dp"/>
-<!--            <Button-->
-<!--                android:id="@+id/button_notification_sync"-->
-<!--                android:layout_width="80dp"-->
-<!--                android:layout_height="80dp"-->
-<!--                android:layout_marginStart="5dp"-->
-<!--                android:layout_marginLeft="5dp"-->
-<!--                android:layout_marginTop="5dp"-->
-<!--                android:height="15dp"-->
-<!--                android:background="@animator/bg_button"-->
-<!--                android:foreground="@android:drawable/ic_popup_sync"-->
-<!--                android:layout_marginBottom="5dp"/>-->
+                android:foreground="@android:drawable/ic_popup_sync" />
+                <TextView
+                    android:id="@+id/cart_badge_sync"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:background="@drawable/badge_background"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="0"
+                    android:translationZ="2dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+            </FrameLayout>
+
         </LinearLayout>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

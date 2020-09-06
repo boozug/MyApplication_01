@@ -1,5 +1,7 @@
 package com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.VIew;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +12,13 @@ import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.Model.Read_device_type;
+import com.example.myapplication01.Devices_interface_activity.fragments.Notifydevices.View.NotifydeviceActivity;
 import com.example.myapplication01.R;
 
 import java.util.ArrayList;
@@ -21,6 +27,7 @@ import java.util.List;
 public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.ViewHolder> implements Filterable {
     List<Read_device_type> read_device_typeList;
     List<Read_device_type> read_device_typeListFiltered;
+    private Context context;
     @Override
     public Filter getFilter() {
         return new Filter() {
@@ -57,8 +64,10 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView id, device_name,address,value;
         Button notificator_btn;
+        private Context context;
         public ViewHolder(View view) {
             super(view);
+            context = view.getContext();
             id = view.findViewById(R.id.id_textView);
             device_name = view.findViewById(R.id.devicename_textView);
             address = view.findViewById(R.id.address_textView);
@@ -68,7 +77,10 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
                 private static final String TAG = "Read_device_adapter";
                 @Override
                 public void onClick(View view) {
+                    final Intent intent;
                     Log.d(TAG, "Element " + getAdapterPosition() + " clicked.");
+                    intent = new Intent(context, NotifydeviceActivity.class);
+                    context.startActivity(intent);
                 }
             });
         }
