@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
         android:contentDescription="@string/todo"
         android:foregroundGravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,12 +99,6 @@
         android:text="@string/mevn_all_right_reserved_ver0_0"
         android:textColor="@android:color/darker_gray"
         android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/testrx_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="test rx" />
 
 
 </RelativeLayout>

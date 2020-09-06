@@ -80,6 +80,11 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
                     final Intent intent;
                     Log.d(TAG, "Element " + getAdapterPosition() + " clicked.");
                     intent = new Intent(context, NotifydeviceActivity.class);
+                    String str1 = id.getText().toString();
+                    intent.putExtra("id", str1);
+                    String str2 = (String) device_name.getText();
+                    intent.putExtra("device name", str2);
+                    intent.putExtra("address",address.getText());
                     context.startActivity(intent);
                 }
             });

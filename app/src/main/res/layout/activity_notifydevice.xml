@@ -7,19 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".Devices_interface_activity.fragments.Notifydevices.View.NotifydeviceActivity">
 
-    <View
-        android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
-        android:background="#D3D3D3" />
-
     <TextView
         android:id="@+id/device_type"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/line"
         android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="10dp"
@@ -91,14 +82,15 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/frame_noti_observable"
         android:background="@drawable/rectabgle_with_stroke">
+
         <EditText
             android:id="@+id/Notify_min_value"
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Min_value" />
+            android:hint="Min_value"
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/editTextTextMultiLine_minvalue"
@@ -108,7 +100,7 @@
             android:gravity="start|top"
             android:layout_below="@+id/Notify_min_value"
             android:inputType="textMultiLine"
-            android:text="Message for notification"/>
+            android:hint="Message for notification"/>
 
         <CheckBox
             android:id="@+id/Checkbox_minvalue"
@@ -124,14 +116,15 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/layout_min"
         android:background="@drawable/rectabgle_with_stroke">
+
         <EditText
             android:id="@+id/Notify_max_value"
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Max_value" />
+            android:hint="Max_value"
+            android:inputType="number" />
         <EditText
             android:id="@+id/editTextTextMultiLine2"
             android:layout_width="match_parent"
@@ -140,7 +133,7 @@
             android:gravity="start|top"
             android:layout_below="@+id/Notify_max_value"
             android:inputType="textMultiLine"
-            android:text="Message for notifycation"/>
+            android:hint="Message for notifycation"/>
         <CheckBox
             android:id="@+id/Checkbox_maxvalue"
             android:layout_width="match_parent"
