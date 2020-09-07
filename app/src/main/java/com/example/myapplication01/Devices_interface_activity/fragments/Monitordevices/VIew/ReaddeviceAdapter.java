@@ -1,20 +1,19 @@
 package com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.VIew;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.Model.Read_device_type;
@@ -63,7 +62,7 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
     // Provide a reference to the views for each data item
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView id, device_name,address,value;
-        Button notificator_btn;
+        Button add_notificator_btn, notify_btn;
         private Context context;
         public ViewHolder(View view) {
             super(view);
@@ -72,8 +71,9 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
             device_name = view.findViewById(R.id.devicename_textView);
             address = view.findViewById(R.id.address_textView);
             value = view.findViewById(R.id.value_textView);
-            notificator_btn = view.findViewById(R.id.button_notification1);
-            notificator_btn.setOnClickListener(new View.OnClickListener() {
+            add_notificator_btn = view.findViewById(R.id.button_notification1);
+            notify_btn = view.findViewById(R.id.button_notification_enable);
+            add_notificator_btn.setOnClickListener(new View.OnClickListener() {
                 private static final String TAG = "Read_device_adapter";
                 @Override
                 public void onClick(View view) {
@@ -88,7 +88,16 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
                     context.startActivity(intent);
                 }
             });
+
+            notify_btn.setOnClickListener(view1 -> showdialog(context));
         }
+    }
+
+    private void showdialog(Context context) {
+        Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.dialog_positive_layout);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.show();
     }
 
     // Provide a suitable constructor (depends on the kind of data set)
@@ -113,6 +122,7 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
         holder.device_name.setText("Device type: "+read_device_type_tmp.getDevice_name());
         holder.address.setText("Address number: " + read_device_type_tmp.getAddress());
         holder.value.setText("Value is: "+ String.valueOf(read_device_type_tmp.getValue()));
+
     }
     // Return the size of your data set (invoked by the layout manager)
 

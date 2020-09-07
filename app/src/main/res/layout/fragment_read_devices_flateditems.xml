@@ -32,7 +32,7 @@
                 android:id="@+id/devicename_textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/rectabgle_with_stroke"
+                android:background="@drawable/rectangle_with_stroke"
                 android:textSize="20sp" />
 
 
@@ -40,14 +40,14 @@
                 android:id="@+id/address_textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/rectabgle_with_stroke"
+                android:background="@drawable/rectangle_with_stroke"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/value_textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/rectabgle_with_stroke"
+                android:background="@drawable/rectangle_with_stroke"
                 android:textSize="20sp"/>
 
         </LinearLayout>
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/linear_layout_for_btn"
             android:layout_below="@+id/linear_layout"
-            android:background="@drawable/rectabgle_with_stroke">
+            android:background="@drawable/rectangle_with_stroke">
 
             <FrameLayout
                 android:layout_width="wrap_content"
@@ -104,7 +104,7 @@
                     android:gravity="center"
                     android:padding="3dp"
                     android:text="0"
-                    android:translationZ="2dp"
+                    android:translationZ="3dp"
                     android:textColor="@android:color/white"
                     android:textSize="15sp" />
             </FrameLayout>
@@ -135,7 +135,7 @@
                     android:gravity="center"
                     android:padding="3dp"
                     android:text="0"
-                    android:translationZ="2dp"
+                    android:translationZ="3dp"
                     android:textColor="@android:color/white"
                     android:textSize="15sp" />
             </FrameLayout>

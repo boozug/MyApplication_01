@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/reading_duration_textview"
         android:layout_marginTop="-2dp"
-        android:background="@drawable/rectabgle_with_stroke"
+        android:background="@drawable/rectangle_with_stroke"
         android:inputType="number"
         android:scrollbarStyle="outsideOverlay"
         android:scrollbarTrackHorizontal="@color/blue_100" />

@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/buton_monitoring"
-                android:background="@drawable/rectabgle_with_stroke"
+                android:background="@drawable/rectangle_with_stroke"
                 android:text="Connection setup time"
                 android:textColor="@color/cardview_dark_background" />
             <TextView
@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/read_connection_setup_time_textview"
-                android:background="@drawable/rectabgle_with_stroke"
+                android:background="@drawable/rectangle_with_stroke"
                 android:text="Connection_status"
                 android:textColor="@color/cardview_dark_background" />
             <TextView
@@ -61,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/read_connection_status_textview"
-                android:background="@drawable/rectabgle_with_stroke"
+                android:background="@drawable/rectangle_with_stroke"
                 android:text="Reading_duration"
                 android:textColor="@color/cardview_dark_background" />
 
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/reading_duration_textview"
                 android:layout_marginTop="-2dp"
-                android:background="@drawable/rectabgle_with_stroke"
+                android:background="@drawable/rectangle_with_stroke"
                 android:inputType="number"
                 android:scrollbarStyle="outsideOverlay"
                 android:scrollbarTrackHorizontal="@color/blue_100" />
