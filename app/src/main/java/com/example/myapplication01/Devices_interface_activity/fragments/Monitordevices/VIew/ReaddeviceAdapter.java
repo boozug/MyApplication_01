@@ -88,15 +88,14 @@ public class ReaddeviceAdapter extends RecyclerView.Adapter<ReaddeviceAdapter.Vi
                     context.startActivity(intent);
                 }
             });
-
             notify_btn.setOnClickListener(view1 -> showdialog(context));
         }
     }
 
     private void showdialog(Context context) {
         Dialog dialog = new Dialog(context);
-        dialog.setContentView(R.layout.dialog_positive_layout);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_positive_layout);
         dialog.show();
     }
 
