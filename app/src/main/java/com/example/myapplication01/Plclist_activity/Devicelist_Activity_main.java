@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication01.Adddevice_activity.Adddevice_activity_1;
-import com.example.myapplication01.Adddevice_activity.Addevice_DBUserAdapter;
+import com.example.myapplication01.SQL_interface.Addevice_DBUserAdapter;
 import com.example.myapplication01.Adddevice_activity.Addevice_UDT_activity;
 import com.example.myapplication01.Devices_interface_activity.ui.Interface_mainpage;
 import com.example.myapplication01.R;

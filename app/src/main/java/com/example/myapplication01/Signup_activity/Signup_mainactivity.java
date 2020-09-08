@@ -12,7 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication01.Adddevice_activity.Addevice_DBUserAdapter;
+import com.example.myapplication01.SQL_interface.Addevice_DBUserAdapter;
 import com.example.myapplication01.Login_activity.Login_Mainactivity;
 import com.example.myapplication01.R;
 

@@ -8,7 +8,7 @@ import java.util.List;
 import jp.co.melco.mxcomponent.MELMxCommunication;
 import jp.co.melco.mxcomponent.MELMxOpenSettings;
 
-import static com.example.myapplication01.Adddevice_activity.Addevice_DBUserAdapter.read_information_from_position_in_database;
+import static com.example.myapplication01.SQL_interface.Addevice_DBUserAdapter.read_information_from_position_in_database;
 
 public class MX_Component_API {
 //    --------------------------Diagnostic

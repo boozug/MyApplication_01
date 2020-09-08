@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import static com.example.myapplication01.Adddevice_activity.Addevice_DBUserAdapter.read_data_cursor_to_list;
+import static com.example.myapplication01.SQL_interface.Addevice_DBUserAdapter.read_data_cursor_to_list;
 import static com.example.myapplication01.Plclist_activity.Devicelist_Activity_main.Count_save;
 
 

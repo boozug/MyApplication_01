@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.myapplication01.Plclist_activity.Devicelist_Activity_main;
 import com.example.myapplication01.R;
+import com.example.myapplication01.SQL_interface.Addevice_DBUserAdapter;
 import com.google.android.material.snackbar.Snackbar;
 
 import static com.example.myapplication01.Adddevice_activity.Adddevice_activity_1.device_list;
