@@ -64,22 +64,22 @@ public class ModalView {
             read_device_list.setDevice_name("D");
             read_device_list.setAddress("D"+j);
             read_device_list.setValue(read_array_960_D_devices[j]);
-            if (information_from_notify_activity.get(j)!=null){
-                List<String> list_information_from_notify_activity = information_from_notify_activity.get(j);
-                boolean res = (read_device_list.isMin_value_checked()||read_device_list.isMax_value_checked());
-                if (res){
-                    read_device_list.setMin_value_limit(Integer.decode(list_information_from_notify_activity.get(MIN_LIMIT)));
-                    read_device_list.setNoti_min_limit(list_information_from_notify_activity.get(NOTIFY_MIN_LIMIT));
-                    read_device_list.setMax_value_limit(Integer.decode(list_information_from_notify_activity.get(MAX_LIMIT)));
-                    read_device_list.setNoti_max_limit(list_information_from_notify_activity.get(NOTIFY_MAX_LIMIT));
-                    read_device_list.setMin_value_checked(Boolean.getBoolean(list_information_from_notify_activity.get(MIN_CHECKED)));
-                    read_device_list.setMax_value_checked(Boolean.getBoolean(list_information_from_notify_activity.get(MAX_CHECKED)));
-                    read_device_list.setRun_as_service(Boolean.getBoolean(list_information_from_notify_activity.get(RUN_AS_SERVICE)));
-                    if(read_device_list.isMin_value_checked()&(read_array_960_D_devices[j]<=read_device_list.getMin_value_limit())){
-                        read_device_list.setNotify_count(read_device_list.getNotify_count()+1);}
-                    else if (read_device_list.isMax_value_checked()&(read_array_960_D_devices[j]>=read_device_list.getMax_value_limit())){
-                        read_device_list.setNotify_count(read_device_list.getNotify_count()+1);}
-                }
+//            if (information_from_notify_activity.get(j)!=null){
+//                List<String> list_information_from_notify_activity = information_from_notify_activity.get(j);
+//                boolean res = (read_device_list.isMin_value_checked()||read_device_list.isMax_value_checked());
+//                if (res){
+//                    read_device_list.setMin_value_limit(Integer.decode(list_information_from_notify_activity.get(MIN_LIMIT)));
+//                    read_device_list.setNoti_min_limit(list_information_from_notify_activity.get(NOTIFY_MIN_LIMIT));
+//                    read_device_list.setMax_value_limit(Integer.decode(list_information_from_notify_activity.get(MAX_LIMIT)));
+//                    read_device_list.setNoti_max_limit(list_information_from_notify_activity.get(NOTIFY_MAX_LIMIT));
+//                    read_device_list.setMin_value_checked(Boolean.getBoolean(list_information_from_notify_activity.get(MIN_CHECKED)));
+//                    read_device_list.setMax_value_checked(Boolean.getBoolean(list_information_from_notify_activity.get(MAX_CHECKED)));
+//                    read_device_list.setRun_as_service(Boolean.getBoolean(list_information_from_notify_activity.get(RUN_AS_SERVICE)));
+//                    if(read_device_list.isMin_value_checked()&(read_array_960_D_devices[j]<=read_device_list.getMin_value_limit())){
+//                        read_device_list.setNotify_count(read_device_list.getNotify_count()+1);}
+//                    else if (read_device_list.isMax_value_checked()&(read_array_960_D_devices[j]>=read_device_list.getMax_value_limit())){
+//                        read_device_list.setNotify_count(read_device_list.getNotify_count()+1);}
+//                }
 //                else {
 //                    read_device_list.setMin_value_limit(0);
 //                    read_device_list.setNoti_min_limit("");
@@ -90,11 +90,11 @@ public class ModalView {
 //                    read_device_list.setRun_as_service(false);
 //                    read_device_list.setNotify_count(0);
 //                }
-                read_device_array_list.add(read_device_list);
-            }
-            else {
+//                read_device_array_list.add(read_device_list);
+//            }
+//            else {
             read_device_array_list.add(read_device_list);
-            }
+//            }
         }
         return read_device_array_list;
     }

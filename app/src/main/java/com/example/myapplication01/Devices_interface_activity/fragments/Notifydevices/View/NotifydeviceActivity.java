@@ -1,9 +1,13 @@
 package com.example.myapplication01.Devices_interface_activity.fragments.Notifydevices.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myapplication01.Devices_interface_activity.fragments.Monitordevices.Model.Read_device_type;
 import com.example.myapplication01.SQL_interface.Addevice_DBUserAdapter;
 import android.content.Context;
 import android.content.Intent;
+import android.database.CursorIndexOutOfBoundsException;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -27,6 +31,8 @@ public class NotifydeviceActivity extends AppCompatActivity {
     EditText Min_value_txt,Notify_min_txt,Max_value_txt,Notify_max_txt;
     CheckBox Min_value_chx,Max_value_chx,Run_as_service;
     Button Save_btn;
+    boolean update_or_add;
+
     public static ArrayList<List<String>> information_from_notify_activity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +43,6 @@ public class NotifydeviceActivity extends AppCompatActivity {
         device_id = findViewById(R.id.device_id);
         Save_btn = findViewById(R.id.save_notify_information);
         device_address = findViewById(R.id.device_address);
-
         Min_value_txt = findViewById(R.id.Notify_min_value);
         Notify_min_txt = findViewById(R.id.editTextTextMultiLine_minvalue);
         Min_value_chx = findViewById(R.id.Checkbox_minvalue);
@@ -58,35 +63,52 @@ public class NotifydeviceActivity extends AppCompatActivity {
         Notify_max_txt.setText(information_from_notify_activity_tmp.getNoti_max_limit());
         Min_value_chx.setChecked(information_from_notify_activity_tmp.isMin_value_checked());
         Max_value_chx.setChecked(information_from_notify_activity_tmp.isMax_value_checked());
-        Run_as_service.setChecked(information_from_notify_activity_tmp.isRun_as_service());}
+        Run_as_service.setChecked(information_from_notify_activity_tmp.isRun_as_service());
+        update_or_add = true;
+        }
         catch (Exception ignored){
             Log.d(TAG,"no need 2 create");
+            update_or_add = false;
         }
 
-        Save_btn.setOnClickListener(view -> { Intent_change_activity(this);
+        Save_btn.setOnClickListener(view -> { Intent_change_activity(this,device_id);
         });
     }
-
-    private void Intent_change_activity(Context context) {
+;
+    private void Intent_change_activity(Context context, TextView device_id) {
         //Step 1: Convert cac thuoc tinh thu duoc tu activity dua vao fragment => dua cac gia tri vao mot array list static public
         String str_id,str_min_value,str_notify_min,str_max_value,str_notify_max;
-        str_id = device_id.getText().toString();
+        str_id = this.device_id.getText().toString();
         str_min_value = Min_value_txt.getText().toString();
         str_notify_min = Notify_min_txt.getText().toString();
         str_max_value = Max_value_txt.getText().toString();
         str_notify_max = Notify_max_txt.getText().toString();
-        if (str_min_value.equals("")||str_notify_min.equals("")||str_max_value.equals("")||str_notify_max.equals(""))
-        {
-            Toast.makeText(context,"Pls check ur field",Toast.LENGTH_LONG).show();
-        }
-        else if {
-            Addevice_DBUserAdapter.update_device_setting(information_from_notify_activity_tmp,this);
-        }
-        else if {
-            Addevice_DBUserAdapter.add
-        }
+        Notify_devices notify_devices_access = new Notify_devices();
 
-        Intent intent = new Intent(context, Interface_mainpage.class);
-        context.startActivity(intent);
+
+        Integer pos = Integer.valueOf(device_id.getText().toString().substring(12));
+        // Take from database.
+        if (update_or_add)
+        {
+            // Co trong database
+            Notify_devices notify_devices = Addevice_DBUserAdapter.get_Notification_device(pos+1);
+            if (str_min_value.equals("")||str_notify_min.equals("")||str_max_value.equals("")||str_notify_max.equals(""))
+            {
+                Toast.makeText(context,"Pls check ur field",Toast.LENGTH_LONG).show();
+            }
+            else {
+                Addevice_DBUserAdapter.update_device_setting(notify_devices, context);
+            }
+            Intent intent = new Intent(context, Interface_mainpage.class);
+            context.startActivity(intent);
+        }
+        else
+        {
+            // Chua co trong database
+            Notify_devices notify_devices = Addevice_DBUserAdapter.get_Notification_device(pos+1);
+            Addevice_DBUserAdapter.add_device_setting(notify_devices, context);
+            Intent intent = new Intent(context, Interface_mainpage.class);
+            context.startActivity(intent);
+        }
     }
 }

@@ -23,7 +23,11 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="1b69890e-af06-4a96-9df3-25b32ededf58">
+        <schema name="main" object-types="index, column, constraint, table, dataset trigger" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1b69890e-af06-4a96-9df3-25b32ededf58">
@@ -34,7 +38,9 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="1b69890e-af06-4a96-9df3-25b32ededf58" object-ref="schemas/main/tables/device_notify_setting" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="1b69890e-af06-4a96-9df3-25b32ededf58" />
@@ -49,6 +55,11 @@
     <filter-actions connection-id="1b69890e-af06-4a96-9df3-25b32ededf58" dataset="main.sqlite_sequence" active-filter-id="" />
     <filter-actions connection-id="1b69890e-af06-4a96-9df3-25b32ededf58" dataset="main.device_table" active-filter-id="7b0f4e9c-7ee6-441a-8129-2fecb8b93f79">
       <filter id="7b0f4e9c-7ee6-441a-8129-2fecb8b93f79" name="10" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="_id" operator="&lt;" value="10" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="1b69890e-af06-4a96-9df3-25b32ededf58" dataset="main.device_notify_setting" active-filter-id="a93f545d-3ce9-4106-ad4a-7b1feb04bc4b">
+      <filter id="a93f545d-3ce9-4106-ad4a-7b1feb04bc4b" name="10" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="_id" operator="&lt;" value="10" active="true" />
       </filter>
     </filter-actions>

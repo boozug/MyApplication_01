@@ -134,6 +134,7 @@ public class Addevice_DBUserAdapter
     }
 
     //    region ------------------------update into SQLite database after swipe right
+
     public static void delete_selected_rows(int position,Context context){
         String delete_query = "DELETE FROM device_table WHERE _id >= "+ String.valueOf(position+1) +";";
         SQLiteDatabase db = DBHelper.getWritableDatabase();
@@ -290,17 +291,17 @@ public class Addevice_DBUserAdapter
     //    endregion
 
     //region device notify declaration
-    public void write_device_setting(Read_device_type read_device_type){
+    public static void add_device_setting(Notify_devices notify_devices, Context context){
         String s1,s2,s3,s4,s5,s6,s7,s8,s9;
-        s1 = read_device_type.getAddress();
-        s2 = String.valueOf(read_device_type.getMin_value_limit());
-        s3 = String.valueOf(read_device_type.getMax_value_limit());
-        s4 = String.valueOf(read_device_type.getNotify_count());
-        s5 = read_device_type.getNoti_min_limit();
-        s6 = read_device_type.getNoti_max_limit();
-        s7 = String.valueOf(read_device_type.isMin_value_checked());
-        s8 = String.valueOf(read_device_type.isMax_value_checked());
-        s9 = String.valueOf(read_device_type.isRun_as_service());
+        s1 = notify_devices.getAddress();
+        s2 = String.valueOf(notify_devices.getMin_value_limit());
+        s3 = String.valueOf(notify_devices.getMax_value_limit());
+        s4 = String.valueOf(notify_devices.getNotify_count());
+        s5 = notify_devices.getNoti_min_limit();
+        s6 = notify_devices.getNoti_max_limit();
+        s7 = String.valueOf(notify_devices.isMin_value_checked());
+        s8 = String.valueOf(notify_devices.isMax_value_checked());
+        s9 = String.valueOf(notify_devices.isRun_as_service());
         String insert_query = "INSERT INTO device_notify_setting VALUES ('"
                 +s1 + "','" +s2+ "','" +s3+ "','" +s4+ "','" +s5+ "','" +s6+ "','" +s7+ "','"+s8+"','" +s9+ "');" ;
         SQLiteDatabase db = DBHelper.getWritableDatabase();
@@ -315,7 +316,7 @@ public class Addevice_DBUserAdapter
         DBHelper.close();
     }
 
-    public static void update_device_setting(Notify_devices notify_devices,Context context{
+    public static void update_device_setting(Notify_devices notify_devices,Context context){
         String s1,s2,s3,s4,s5,s6,s7,s8,s9,s10;
         s1 = String.valueOf(notify_devices.getId());
         s2 = notify_devices.getAddress();
@@ -350,9 +351,9 @@ public class Addevice_DBUserAdapter
         DBHelper.close();
     }
 
-    public static Notify_devices get_Notification_device(int pos){
-        List<String> notify_device_query_from_database = new ArrayList<>();
-        String select_query = "SELECT *FROM device_table WHERE (_id ="+pos+");";
+    @NotNull
+    public static Notify_devices get_Notification_device(int pos_plus1){
+        String select_query = "SELECT *FROM device_notify_setting WHERE (_id ="+pos_plus1+");";
         SQLiteDatabase db = DBHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(select_query,null);
         //looping through all rows and adding to list
@@ -370,7 +371,7 @@ public class Addevice_DBUserAdapter
         return notify_devices;
     }
 
-    private boolean get_boolean(@NotNull String i) {
+    private static boolean get_boolean(@NotNull String i) {
         boolean b;
         b = false;
         switch (i){
